@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <script src="indexjs.js"> </script>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+    <div class="canvas">
+	  <div>
+        <button name = "logout" value="logout" id="logout" onclick="logout()">Logout</button>
+    </div>
+        <div class="column left" id="toolkit">
+		
+
+            
+            <div id="add" class="drag-drop" draggable='true' ondragstart='onDragStart(event)'> Add </div>
+
+            <div id="sub" class="drag-drop" draggable='true' ondragstart='onDragStart(event)'> Sub </div>
+
+            <div id="mul" class="drag-drop" draggable='true' ondragstart='onDragStart(event)'> Mul </div>
+
+        </div>
+        <div class="column center" id="dropzone">
+            <div id="outer-dropzone" class="dropzone" ondragover='onDragOver(event);' ondrop='onDrop(event)' >
+                Sandbox
+                <!--<div id="inner-dropzone" class="dropzone">#inner-dropzone</div>-->
+            </div>
+        </div>
+        <div class="column right" id="result">
+            <p>Result</p>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
