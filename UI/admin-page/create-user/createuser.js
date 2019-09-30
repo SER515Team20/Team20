@@ -10,3 +10,10 @@ function checkForStudent() {
     }
 
 }
+function register() {
+    alert("User successfully registered!");
+    location.reload();
+}
+function cancelreg() {
+    location.reload();
+}
