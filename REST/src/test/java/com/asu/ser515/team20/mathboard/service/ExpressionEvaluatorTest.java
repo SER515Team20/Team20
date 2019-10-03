@@ -10,7 +10,7 @@ public class ExpressionEvaluatorTest {
 
     @Test
     public void testCase1(){
-        assertEquals(expressionEvaluator.solve("1 + ( 5 * 2 )"),10);
+        assertEquals(expressionEvaluator.solve("1 + ( 5 * 2 )"),11);
     }
 
 }
