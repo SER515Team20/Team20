@@ -1,5 +1,7 @@
 # Installation Guide
 
+Prerequisite : JDK 1.8.xx +
+
 # To install Apache Tomcat: 
 1.	Install Apache Tomcat server from the following location: (Based on system config, please install the relevant Tomcat version)
 https://tomcat.apache.org/download-80.cgi
