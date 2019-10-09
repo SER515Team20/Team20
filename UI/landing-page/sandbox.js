@@ -1,10 +1,3 @@
-function login() {
-
-}
-function logout() {
-    window.location.href = "../../index.html";
-}
-     
         function drag(ev) {
             ev.dataTransfer.setData("text", ev.target.id);
         }
@@ -29,11 +22,12 @@ function logout() {
             // doc.appendChild(div);
             copyNbr.setAttribute("class", "operatorContainer number numberText");
             // div.innerHTML = "1";
-            calculateResult();
+            //calculateResult();
 
         }
 
         function calculateResult() {
+            try {
             var items = document.getElementById('sandboxExpression').childNodes;
             var rs = "";
             for (var i = 0; i < items.length; i++) {
@@ -45,7 +39,13 @@ function logout() {
             }
             console.log(rs);
             console.log(eval(rs));
+            
             document.getElementById("finalResult").value = eval(rs);
+            }
+            catch(err){
+                alert("Invalid Expression");
+            }
+
         }
 
         function clearForm(){
