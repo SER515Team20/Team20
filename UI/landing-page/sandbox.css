@@ -1,0 +1,60 @@
+
+            .numberContainer {
+            width: 25%;
+            height: 100%;
+            float: left;
+            background-color: green;
+            overflow-y: auto;
+
+
+        }
+
+        .sandboxContainer {
+            width: 50%;
+            height: 100%;
+            float: left;
+            background-color: aqua;
+        }
+
+        .resultContainer {
+            width: 25%;
+            height: 100%;
+            background-color: white;
+            float: right;
+        }
+
+        .operatorContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            overflow-y: auto;
+
+        }
+
+        .number {
+            height: 50px;
+            width: 50px;
+            background-color: blue;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .numberText {
+            color: aliceblue;
+            font-size: 25px;
+        }
+
+        .sbExpression {
+            
+            flex-wrap: wrap;
+            width: 100%;
+            display: flex;
+        }
+
+        
+
+
+
