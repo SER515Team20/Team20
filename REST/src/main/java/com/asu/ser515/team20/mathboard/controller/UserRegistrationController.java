@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+@CrossOrigin
 @RestController
 @Api(tags = {"User Registration"})
 @SwaggerDefinition(tags = {
@@ -19,14 +19,14 @@ public class UserRegistrationController {
 
     @Autowired
     private UserRegistrationService userRegistrationService;
-
-    @RequestMapping(method = RequestMethod.POST, value = "/RegisterUser")
+    @CrossOrigin
+    @RequestMapping(value = "/RegisterUser", method = RequestMethod.POST)
     @ApiOperation(value = "Provide a user to be registered in JSON format",response = ResponseEntity.class)
     public ResponseEntity<String> getUser(@RequestBody User user){
         userRegistrationService.addUser(user);
         return new ResponseEntity<>("User Added Successfully", HttpStatus.OK);
     }
-
+    @CrossOrigin
     @RequestMapping(value = "/getUser/{userId}", method = RequestMethod.GET)
     @ApiOperation(value = "Provide userId",response = User.class)
     public User ExpressionEvaluator(@PathVariable String userId) {
