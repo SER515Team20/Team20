@@ -35,7 +35,7 @@ function loginAPICall(userid, password) {
 			
          }
     };
-	xhttp.open("GET", url, true);
+	xhttp.open("GET", url, false);
 	xhttp.send();
 }
 function logout() {

@@ -30,16 +30,11 @@ function register() {
 			return false;
 		}
 	}
-	if (document.getElementById("psw").value !== document.getElementById("psw-repeat").value) {
-		alert("Passwords do not match");
+	if (!checkPassword(document.getElementById("psw").value, document.getElementById("psw-repeat").value)) {
 		return false;
 	}
 	if (nonNullFields===reqFields.length) {
-		regUserAPICall();
-	} 
-}
-function regUserAPICall() {
-	var params = {
+		var params = {
 			'userid' : document.getElementById('userid').value,
 			'name' : document.getElementById('name').value,
 			'role' : role,
@@ -47,19 +42,32 @@ function regUserAPICall() {
 			'email' : document.getElementById('email').value,
 			'password' : document.getElementById('psw').value
 		};
+		regUserAPICall(params);
+	} 
+}
+function regUserAPICall(params) {
+	
 	var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
          if (this.readyState == 4 && this.status == 200) {
              alert(this.responseText);
          }
     };
-	xhttp.open("POST", "http://127.0.0.1:8080/RegisterUser", true);
+	xhttp.open("POST", "http://127.0.0.1:8080/RegisterUser", false);
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send(JSON.stringify(params));
 }
 function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return re.test(String(email).toLowerCase());
+}
+function checkPassword(pwd, repeatpwd) {
+	if (pwd !== repeatpwd) {
+		alert("Passwords do not match");
+		return false;
+	}else {
+		return true;
+	}
 }
 function cancelreg() {
     window.location.href="../";
