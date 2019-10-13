@@ -3,7 +3,7 @@
             width: 25%;
             height: 100%;
             float: left;
-            background-color: green;
+            background-color: rgb(249, 250, 249);
             overflow-y: auto;
 
 
@@ -13,7 +13,7 @@
             width: 50%;
             height: 100%;
             float: left;
-            background-color: aqua;
+            background-color: rgb(222, 233, 233);
         }
 
         .resultContainer {
@@ -28,13 +28,14 @@
             flex-direction: row;
             flex-wrap: wrap;
             overflow-y: auto;
+            height : 30%;
 
         }
 
         .number {
             height: 50px;
             width: 50px;
-            background-color: blue;
+            background-color: rgb(160, 160, 224);
             margin: 5px;
             display: flex;
             justify-content: center;
@@ -43,7 +44,7 @@
         }
 
         .numberText {
-            color: aliceblue;
+            color: rgb(247, 250, 252);
             font-size: 25px;
         }
 
@@ -52,6 +53,23 @@
             flex-wrap: wrap;
             width: 100%;
             display: flex;
+        }
+
+        .sumExpression{
+            
+            width: 20px;
+            display: flex;
+
+        }
+
+        .expression {
+            height: 50px;
+            width: 100px;
+            background-color: rgb(160, 160, 224);
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         

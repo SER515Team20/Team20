@@ -20,7 +20,10 @@
 
             //var div = document.createElement("div");
             // doc.appendChild(div);
+            if (orgNbr.className==="number")
             copyNbr.setAttribute("class", "operatorContainer number numberText");
+            else if (orgNbr.className==="expression")
+            copyNbr.setAttribute("class", "operatorContainer expression numberText");
             // div.innerHTML = "1";
             //calculateResult();
 
@@ -31,11 +34,23 @@
             var items = document.getElementById('sandboxExpression').childNodes;
             var rs = "";
             for (var i = 0; i < items.length; i++) {
+                console.log(items[i].childNodes);
 
-                if (items[i].nodeName != "#text") {
+                if (items[i].className==="operatorContainer expression numberText"){
+
+                    span = items[i].childNodes;
+                    
+                
+                rs += (span[1].childNodes[0].value) + (span[3].innerHTML) + (span[5].childNodes[0].value);
+                }
+
+                else if (items[i].nodeName != "#text") {
                     span = items[i].childNodes;
                     rs += (span[1].innerHTML);
                 }
+
+                
+
             }
             console.log(rs);
             console.log(eval(rs));
