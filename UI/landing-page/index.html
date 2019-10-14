@@ -8,7 +8,7 @@
 
 <body>
     <div class="numberContainer">
-        <div class="operatorContainer">
+        <div class="blockContainer">
             <div class="number" id="1" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">1</span>
 
@@ -77,30 +77,56 @@
             
     
         </div>
-        <div class="expressionContainer">
-            <div class="expression" id="addition" draggable="true" ondragstart="drag(event)">
+        <div class="operatorContainer">
+            <div class="operatorExpression" id="addition" draggable="true" ondragstart="drag(event)">
             <span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
             <span class="numberText">+</span>
             <span id="rightNum"><input type="text" class="sumExpression"></input></span>
         </div>
-        <div class="expression" id="subtraction" draggable="true" ondragstart="drag(event)">
+        <div class="operatorExpression" id="subtraction" draggable="true" ondragstart="drag(event)">
             <span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
             <span class="numberText">-</span>
             <span id="rightNum"><input type="text" class="sumExpression"></input></span>
         </div>
-        <div class="expression" id="multiplication" draggable="true" ondragstart="drag(event)">
+        <div class="operatorExpression" id="multiplication" draggable="true" ondragstart="drag(event)">
             <span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
             <span class="numberText">*</span>
             <span id="rightNum"><input type="text" class="sumExpression"></input></span>
         </div>
-        <div class="expression" id="division" draggable="true" ondragstart="drag(event)">
+        <div class="operatorExpression" id="division" draggable="true" ondragstart="drag(event)">
             <span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
             <span class="numberText">/</span>
             <span id="rightNum"><input type="text" class="sumExpression"></input></span>
         </div>
+
  
 
 
+        </div>
+
+        <div class="trigonometryContainer">
+            
+        <div class="trigExpression" id="sine" draggable="true" ondragstart="drag(event)">
+            <span class="numberText">sin (</span>
+            <span id="sineinput"><input type="text" class="sumExpression"></input></span>
+            <span class="numberText">)</span>
+        </div>
+
+        <div class="trigExpression" id="sine" draggable="true" ondragstart="drag(event)">
+            <span class="numberText">cos (</span>
+            <span id="cosineinput"><input type="text" class="sumExpression"></input></span>
+            <span class="numberText">)</span>
+        </div>
+
+        <div class="trigExpression" id="sine" draggable="true" ondragstart="drag(event)">
+            <span class="numberText">tan (</span>
+            <span id="taninput"><input type="text" class="sumExpression"></input></span>
+            <span class="numberText">)</span>
+        </div>
+
+        
+
+        
         </div>
 
     </div>

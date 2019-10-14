@@ -23,12 +23,29 @@
             float: right;
         }
 
+        .blockContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            overflow-y: auto;
+            height : 40%;
+
+        }
+
         .operatorContainer {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             overflow-y: auto;
-            height : 30%;
+            height : 12%;
+
+        }
+        .trigonometryContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            overflow-y: auto;
+            height : 12%;
 
         }
 
@@ -62,9 +79,19 @@
 
         }
 
-        .expression {
+        .operatorExpression {
             height: 50px;
-            width: 100px;
+            width: 80px;
+            background-color: rgb(160, 160, 224);
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .trigExpression {
+            height: 50px;
+            width: 80px;
             background-color: rgb(160, 160, 224);
             margin: 5px;
             display: flex;
