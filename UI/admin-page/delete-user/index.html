@@ -2,6 +2,7 @@
 <html>
 <head>
 </head>
+<link rel="stylesheet" href ="../../styles.css">
 <script>
 function deleteconfirm() {
 var user = document.getElementById("name").value;
@@ -16,12 +17,12 @@ else
 </script>
 <body>
 
-<form action="" style="border:1px solid #ccc">
-  <div class="container">
+<form>
+  <div class="Userform Delete">
     <h1>Delete User</h1>
     <p>Please Enter UserID to delete an account.</p>
     <hr>
-<table>
+<table class="DeleteUserTable">
 <tr><td><label for="userID"><b>User ID</b></label></td>
     <td><input type="text" placeholder="Enter UserId" id="userIDText" name="userIDText" required></td>
     <td>
