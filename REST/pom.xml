@@ -50,6 +50,20 @@
 			<version>2.3.0</version>
 		</dependency>
 
+		<!--Dependecy to connect with DB (in our case excel)-->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.17</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

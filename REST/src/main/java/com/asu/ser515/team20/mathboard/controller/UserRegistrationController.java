@@ -1,7 +1,7 @@
 package com.asu.ser515.team20.mathboard.controller;
 
 import com.asu.ser515.team20.mathboard.model.User;
-import com.asu.ser515.team20.mathboard.service.UserRegistrationService;
+import com.asu.ser515.team20.mathboard.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.SwaggerDefinition;
@@ -18,18 +18,18 @@ import org.springframework.web.bind.annotation.*;
 public class UserRegistrationController {
 
     @Autowired
-    private UserRegistrationService userRegistrationService;
+    private UserService userService;
     @CrossOrigin
     @RequestMapping(value = "/RegisterUser", method = RequestMethod.POST)
     @ApiOperation(value = "Provide a user to be registered in JSON format",response = ResponseEntity.class)
     public ResponseEntity<String> getUser(@RequestBody User user){
-        userRegistrationService.addUser(user);
-        return new ResponseEntity<>("User Added Successfully", HttpStatus.OK);
+        return userService.addUser(user) ? new ResponseEntity<>("User Added Successfully", HttpStatus.OK) : new ResponseEntity<>("Failed to add user.", HttpStatus.EXPECTATION_FAILED);
     }
+
     @CrossOrigin
-    @RequestMapping(value = "/getUser/{userId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/getUser/{userId}/{password}", method = RequestMethod.GET)
     @ApiOperation(value = "Provide userId",response = User.class)
-    public User ExpressionEvaluator(@PathVariable String userId) {
-        return userRegistrationService.getUsers(userId);
+    public User ExpressionEvaluator(@PathVariable(value = "userID") String userId, @PathVariable(value = "password") String password) {
+        return userService.getUsers(userId, password);
     }
 }
