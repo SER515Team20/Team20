@@ -38,18 +38,18 @@ function calculateResult() {
         for (var i = 0; i < items.length; i++) {
             console.log(items[i].childNodes);
 
-            if (items[i].className === "blockContainer expression numberText") {
+            if (items[i].className === "blockContainer operatorExpression numberText") {
 
                 span = items[i].childNodes;
                 rs += (span[1].childNodes[0].value) + (span[3].innerHTML) + (span[5].childNodes[0].value);
             }
 
 
-            else if (items[i].className == "blockContainer trigExpression  numberText") {
-                span = items[i].childNodes;
-                rs += (span[1].childNodes[1].innerHTML) + (span[3].value) + (span[5].childNodes[0].innerHTML);
-                console.log(rs);
-            }
+            // else if (items[i].className === "blockContainer trigExpression  numberText") {
+            //     span = items[i].childNodes;
+            //     rs += (span[1].childNodes[1].innerHTML) + (span[3].value) + (span[5].childNodes[0].innerHTML);
+            //     console.log(rs);
+            // }
             else if (items[i].nodeName != "#text") {
                 span = items[i].childNodes;
                 rs += (span[1].innerHTML);
