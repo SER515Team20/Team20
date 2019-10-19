@@ -1,10 +1,3 @@
-function login() {
-
-}
-function logout() {
-    window.location.href = "../../index.html";
-}
-
 function onDragStart(event) {
             event
                 .dataTransfer
