@@ -29,7 +29,7 @@ public class UserRegistrationController {
     @CrossOrigin
     @RequestMapping(value = "/getUser/{userId}/{password}", method = RequestMethod.GET)
     @ApiOperation(value = "Provide userId",response = User.class)
-    public User ExpressionEvaluator(@PathVariable(value = "userID") String userId, @PathVariable(value = "password") String password) {
+    public User ExpressionEvaluator(@PathVariable(value = "userId") String userId, @PathVariable(value = "password") String password) {
         return userService.getUsers(userId, password);
     }
 }

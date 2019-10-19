@@ -29,7 +29,7 @@ public class ExcelWriter {
             int numberOfcolumns = details.size();
             // Obtain a workbook from the excel file
             Workbook workbook = WorkbookFactory.create(inputStream);
-            Sheet sheet = workbook.getSheet("User");
+            Sheet sheet = workbook.getSheet("Users");
             if (sheet != null) {
                 int rowCount = sheet.getLastRowNum();
                 Row row = sheet.createRow(rowCount + 1);
