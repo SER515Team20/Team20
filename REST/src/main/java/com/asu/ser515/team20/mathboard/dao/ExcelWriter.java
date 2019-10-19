@@ -24,7 +24,7 @@ public class ExcelWriter {
             details.add(user.getGrade());
             details.add(user.getPassword());
 
-            String SAMPLE_XLSX_FILE_PATH = "./sample-xlsx-file.xlsx";
+            String SAMPLE_XLSX_FILE_PATH = "../sample-xlsx-file.xlsx";
             FileInputStream inputStream = new FileInputStream(SAMPLE_XLSX_FILE_PATH);
             int numberOfcolumns = details.size();
             // Obtain a workbook from the excel file
