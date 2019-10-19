@@ -13,7 +13,7 @@ public class ExcelReader {
 
     public User searchUser(String userID, String password) {
 
-        String SAMPLE_XLSX_FILE_PATH = "../sample-xlsx-file.xlsx";
+        String SAMPLE_XLSX_FILE_PATH = "sample-xlsx-file.xlsx";
         User presentUser = new User();
         try {
             Workbook workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
