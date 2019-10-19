@@ -14,16 +14,16 @@
 	QUnit.module("REST API Unit Test");
 	QUnit.test( "Login user API call: Invalid password", function(assert) {
 		var stub = sinon.stub(window, "alert").callsFake(function(msg) { return false; } );
-		assert.ok(true, loginAPICall("test","pwd#"));
+		assert.ok(true, loginAPICall("test","invalid"));
 		assert.equal(stub.callCount, 1);
-		assert.equal(stub.getCall(0).args[0], "Invalid password");
+		assert.equal(stub.getCall(0).args[0], "Invalid Username/password");
 		stub.restore();
 	});
 	QUnit.test( "Login user API call: Invalid username", function(assert) {
 		var stub = sinon.stub(window, "alert").callsFake(function(msg) { return false; } );
-		assert.ok(true, loginAPICall("z#@!kl","pwd#"));
+		assert.ok(true, loginAPICall("invalid","pwd#"));
 		assert.equal(stub.callCount, 1);
-		assert.equal(stub.getCall(0).args[0], "Invalid username");
+		assert.equal(stub.getCall(0).args[0], "Invalid Username/password");
 		stub.restore();
 	});
   </script>

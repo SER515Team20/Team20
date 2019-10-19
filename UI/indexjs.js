@@ -13,17 +13,17 @@ function login() {
 	
 }
 function loginAPICall(userid, password) {
-	var url = "http://127.0.0.1:8080/getUser/" + userid;
+	var url = "http://127.0.0.1:8080/getUser/" + userid +"/"+ password;
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
          if (this.readyState == 4 && this.status == 200) {
 			 if (this.responseText === "") {
-				 alert("Invalid username");
+				 alert("Error Occurred.. Try again!");
 				 return false;
 			 }
 			var response = JSON.parse(this.responseText);
 			if (response === "" || password !== response.password) {
-				alert("Invalid password");
+				alert("Invalid Username/password");
 				return false;
 			}
 
