@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@Deprecated
 @RestController
 @Api(tags = {"Math Expression Evaluator"})
 @SwaggerDefinition(tags = {
