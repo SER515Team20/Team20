@@ -1,0 +1,105 @@
+
+            .numberContainer {
+            width: 25%;
+            height: 100%;
+            float: left;
+            background-color: rgb(249, 250, 249);
+            overflow-y: auto;
+
+
+        }
+
+        .sandboxContainer {
+            width: 50%;
+            height: 100%;
+            float: left;
+            background-color: rgb(222, 233, 233);
+        }
+
+        .resultContainer {
+            width: 25%;
+            height: 100%;
+            background-color: white;
+            float: right;
+        }
+
+        .blockContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            overflow-y: auto;
+            height : 40%;
+
+        }
+
+        .operatorContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            overflow-y: auto;
+            height : 12%;
+
+        }
+        .trigonometryContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            overflow-y: auto;
+            height : 12%;
+
+        }
+
+        .number {
+            height: 50px;
+            width: 50px;
+            background-color: rgb(160, 160, 224);
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .numberText {
+            color: rgb(247, 250, 252);
+            font-size: 25px;
+        }
+
+        .sbExpression {
+            
+            flex-wrap: wrap;
+            width: 100%;
+            display: flex;
+        }
+
+        .sumExpression{
+            
+            width: 20px;
+            display: flex;
+
+        }
+
+        .operatorExpression {
+            height: 50px;
+            width: 80px;
+            background-color: rgb(160, 160, 224);
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .trigExpression {
+            height: 50px;
+            width: 80px;
+            background-color: rgb(160, 160, 224);
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+
+
+

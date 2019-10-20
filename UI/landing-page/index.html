@@ -1,39 +1,165 @@
 <html>
 
 <head>
-    <script src="indexjs.js"> </script>
-    <link rel="stylesheet" href="style.css">
-
+    <script src="sandbox.js"></script>
+    <script src="../indexjs.js"></script>
+    <link rel="stylesheet" href="sandbox.css"></style>
 </head>
 
 <body>
-    <div class="canvas">
-	  <div>
-        <button name = "logout" value="logout" id="logout" onclick="logout()">Logout</button>
-    </div>
-        <div class="column left" id="toolkit">
-		
+    <div class="numberContainer">
+        <div class="blockContainer">
+            <div class="number" id="1" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">1</span>
 
-            
-            <div id="add" class="drag-drop" draggable='true' ondragstart='onDragStart(event)'> Add </div>
-
-            <div id="sub" class="drag-drop" draggable='true' ondragstart='onDragStart(event)'> Sub </div>
-
-            <div id="mul" class="drag-drop" draggable='true' ondragstart='onDragStart(event)'> Mul </div>
-
-        </div>
-        <div class="column center" id="dropzone">
-            <div id="outer-dropzone" class="dropzone" ondragover='onDragOver(event);' ondrop='onDrop(event)' >
-                Sandbox
-                <!--<div id="inner-dropzone" class="dropzone">#inner-dropzone</div>-->
             </div>
+            <div class="number" id="2" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">2</span>
+
+            </div>
+            <div class="number" id="3" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">3</span>
+
+            </div>
+            <div class="number" id="4" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">4</span>
+
+            </div>
+            <div class="number" id="5" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">5</span>
+
+            </div>
+            <div class="number" id="6" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">6</span>
+
+            </div>
+            <div class="number" id="7" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">7</span>
+
+            </div>
+            <div class="number" id="8" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">8</span>
+
+            </div>
+            <div class="number" id="9" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">9</span>
+
+            </div>
+            <div class="number" id="0" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">0</span>
+
+            </div>
+            <div class="number" id="plus" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">+</span>
+
+            </div>
+            <div class="number" id="minus" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">-</span>
+
+            </div>
+            <div class="number" id="asterisk" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">*</span>
+
+            </div>
+            <div class="number" id="backslash" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">/</span>
+
+            </div>
+
+            <div class="number" id="curlybrace1" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">(</span>
+
+            </div>
+            <div class="number" id="curlybrace2" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">)</span>
+
+            </div>
+            
+    
         </div>
-        <div class="column right" id="result">
-            <p>Result</p>
+        <div class="operatorContainer">
+            <div class="operatorExpression" id="addition" draggable="true" ondragstart="drag(event)">
+            <span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
+            <span class="numberText">+</span>
+            <span id="rightNum"><input type="text" class="sumExpression"></input></span>
+        </div>
+        <div class="operatorExpression" id="subtraction" draggable="true" ondragstart="drag(event)">
+            <span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
+            <span class="numberText">-</span>
+            <span id="rightNum"><input type="text" class="sumExpression"></input></span>
+        </div>
+        <div class="operatorExpression" id="multiplication" draggable="true" ondragstart="drag(event)">
+            <span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
+            <span class="numberText">*</span>
+            <span id="rightNum"><input type="text" class="sumExpression"></input></span>
+        </div>
+        <div class="operatorExpression" id="division" draggable="true" ondragstart="drag(event)">
+            <span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
+            <span class="numberText">/</span>
+            <span id="rightNum"><input type="text" class="sumExpression"></input></span>
+        </div>
+
+ 
+
 
         </div>
+
+        <!-- <div class="trigonometryContainer">
+            
+        <div class="trigExpression" id="sine" draggable="true" ondragstart="drag(event)">
+            <span class="numberText">sin (</span>
+            <span id="sineinput"><input type="text" class="sumExpression"></input></span>
+            <span class="numberText">)</span>
+        </div>
+
+        <div class="trigExpression" id="sine" draggable="true" ondragstart="drag(event)">
+            <span class="numberText">cos (</span>
+            <span id="cosineinput"><input type="text" class="sumExpression"></input></span>
+            <span class="numberText">)</span>
+        </div>
+
+        <div class="trigExpression" id="sine" draggable="true" ondragstart="drag(event)">
+            <span class="numberText">tan (</span>
+            <span id="taninput"><input type="text" class="sumExpression"></input></span>
+            <span class="numberText">)</span>
+        </div>
+
+        
+
+        
+        </div> -->
 
     </div>
+    <div id="sdCon" class="sandboxContainer"  ondrop="drop(event)"  ondragover="allowDrop(event)" >
+        <div class="operatorContainer sbExpression " id="sandboxExpression"   >
+            
+
+        </div>
+
+
+    </div>
+
+    </div>
+
+
+    <div class="resultContainer" id="resultContainer">
+            <div>
+                    <button name = "logout" value="logout" id="logout" onclick="logout()">Logout</button>
+                </div>
+      <button onclick="calculateResult()"> Calculate</button><br> 
+        <button onclick="clearForm()"> Clear</button><br>
+        <textarea id="finalResult" readonly> </textarea>
+        
+
+    </div>
+
+
+
+
+
 </body>
+
+
+
 
 </html>
