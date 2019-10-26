@@ -1,6 +1,13 @@
 <html>
 	<head>
 		<title>Math Board</title>
+		<script>
+			if((sessionStorage.getItem("name") === null 
+				|| sessionStorage.getItem("name") === "")
+				|| sessionStorage.getItem("role") !== "admin") {
+					document.location.href="/UI/";
+			}
+		</script>
 		<script src = "../indexjs.js"></script>
 	</head>
 	<body>

@@ -4,6 +4,13 @@
 </head>
 <link rel="stylesheet" href ="../../styles.css">
 <script>
+	if((sessionStorage.getItem("name") === null 
+				|| sessionStorage.getItem("name") === "")
+				|| sessionStorage.getItem("role") !== "admin") {
+					document.location.href="/UI/";
+			}
+</script>
+<script>
 function deleteconfirm() {
 	var user = document.getElementById("name").value;
 	if(user.length===0){

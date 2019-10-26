@@ -27,6 +27,7 @@ function loginAPICall(userid, password) {
 				return false;
 			} else {
 				if (typeof(Storage) !== "undefined") {
+					sessionStorage.setItem("role", response.role);
 					sessionStorage.setItem("grade", response.grade);
 					sessionStorage.setItem("name", response.name);
 				} else {
