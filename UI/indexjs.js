@@ -25,14 +25,20 @@ function loginAPICall(userid, password) {
 			if (response === "" || password !== response.password) {
 				alert("Invalid Username/password");
 				return false;
-			}
-
+			} else {
+				if (typeof(Storage) !== "undefined") {
+					sessionStorage.setItem("grade", response.grade);
+					sessionStorage.setItem("name", response.name);
+				} else {
+					alert("You are using an older version of browser");
+					return false;
+				}
 				if (response.role === "admin") {
 					window.location.href="admin-page";
 				} else {
 					window.location.href="landing-page";
 				}
-			
+			}
          }
     };
 	xhttp.open("GET", url, false);
@@ -40,6 +46,7 @@ function loginAPICall(userid, password) {
 }
 function logout() {
 	if (confirm("Are you sure to logout?")) {
+		sessionStorage.clear();
 		document.location.href="/UI/";
 	}
 }
