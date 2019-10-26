@@ -65,3 +65,8 @@ function deleteLast() {
 	var element = document.getElementById("sandboxItem"+(--index));
 	element.parentNode.removeChild(element);
 }
+function deleteSelected(event) {
+	event.preventDefault();
+    var element = event.dataTransfer.getData("text");
+	document.getElementById(element).remove();
+}

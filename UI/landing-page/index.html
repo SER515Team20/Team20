@@ -151,6 +151,10 @@
         <textarea id="finalResult" readonly> </textarea>
 		
 		<button class = "deleteBtn" onclick="deleteLast()">Click to delete Last Operation</button>
+			<div class = "deleteArea" ondrop="deleteSelected(event)" ondragover="allowDrop(event)" style = "height:100px; width:200px; background-color:grey">
+			<label>Drop here to delete</label>
+		</div>
+        
 
     </div>
 
