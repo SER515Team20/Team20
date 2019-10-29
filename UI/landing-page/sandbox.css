@@ -28,7 +28,7 @@
             flex-direction: row;
             flex-wrap: wrap;
             overflow-y: auto;
-            height : 40%;
+            height : 50%;
 
         }
 
@@ -37,21 +37,21 @@
             flex-direction: row;
             flex-wrap: wrap;
             overflow-y: auto;
-            height : 12%;
+            height : 50%;
 
         }
-        .trigonometryContainer {
+        /* .trigonometryContainer {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             overflow-y: auto;
             height : 12%;
 
-        }
+        } */
 
         .number {
-            height: 50px;
-            width: 50px;
+            height: 80px;
+            width: 80px;
             background-color: rgb(160, 160, 224);
             margin: 5px;
             display: flex;
@@ -80,8 +80,8 @@
         }
 
         .operatorExpression {
-            height: 50px;
-            width: 80px;
+            height: 120px;
+            width: 120px;
             background-color: rgb(160, 160, 224);
             margin: 5px;
             display: flex;
@@ -89,7 +89,7 @@
             align-items: center;
         }
 
-        .trigExpression {
+        /* .trigExpression {
             height: 50px;
             width: 80px;
             background-color: rgb(160, 160, 224);
@@ -97,7 +97,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
+        } */
 
         
 
