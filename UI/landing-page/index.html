@@ -143,12 +143,13 @@
 
 
     <div class="resultContainer" id="resultContainer">
-            <div>
-                    <button name = "logout" value="logout" id="logout" onclick="logout()">Logout</button>
+            <div class="logoutContainer">
+                    <button name = "logout" value="logout" id="logout" onclick="logout()" class="resultElement" >Logout</button>
                 </div>
-      <button onclick="calculateResult()"> Calculate</button><br> 
-        <button onclick="clearForm()"> Clear</button><br>
-        <textarea id="finalResult" readonly> </textarea>
+      <button onclick="calculateResult()" class="resultElement"> Calculate</button><br><br>
+       
+        <textarea id="finalResult" readonly class="textArea"> </textarea><br><br>
+		 <button onclick="clearForm()" class="resultElement"> Clear</button><br>
         
 
     </div>
