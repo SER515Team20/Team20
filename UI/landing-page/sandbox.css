@@ -21,7 +21,35 @@
             height: 100%;
             background-color: white;
             float: right;
+			
+			
         }
+		.resultElement{
+			font-size: 20px;
+			font-family: "Times New Roman", Times, serif;
+			background-color: rgb(160, 160, 224);
+			color: white;
+			height: 50px;
+    width: 150px;
+	margin-left: 10px;
+		}
+		.textArea{
+			font-size: 25px;
+			font-family: "Times New Roman", Times, serif;
+			background-color: rgb(160, 160, 224);
+			color: white;
+			height: 50px;
+			width:150px;
+			text-align: justify;
+			margin-left: 10px;
+			 
+		}
+		.logoutContainer{
+		 position: absolute;
+  bottom: 10px;
+  right: 185px;
+
+		}
 
         .blockContainer {
             display: flex;
