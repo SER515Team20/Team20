@@ -132,7 +132,7 @@
         </div> -->
 
     </div>
-    <div id="sdCon" class="sandboxContainer"  ondrop="drop(event)"  ondragover="allowDrop(event)" >
+    <div id="sdCon" class="sandboxContainer"  ondrop="drop(event)"  ondragover="allowDrop(event)" ondragstart="drag(event)">
         <div class="operatorContainer sbExpression " id="sandboxExpression"   >
             
 
@@ -148,10 +148,17 @@
             <div class="logoutContainer">
                     <button name = "logout" value="logout" id="logout" onclick="logout()" class="resultElement" >Logout</button>
                 </div>
+
+		
+		
       <button onclick="calculateResult()" class="resultElement"> Calculate</button><br><br>
        
         <textarea id="finalResult" readonly class="textArea"> </textarea><br><br>
 		 <button onclick="clearForm()" class="resultElement"> Clear</button><br>
+    <button class = "deleteBtn" onclick="deleteLast()">Click to delete Last Operation</button>
+			<div class = "deleteArea" ondrop="deleteSelected(event)" ondragover="allowDrop(event)" style = "height:100px; width:200px; background-color:grey">
+			<label>Drop here to delete</label>
+		</div>
         
 
     </div>
