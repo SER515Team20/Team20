@@ -21,14 +21,42 @@
             height: 100%;
             background-color: white;
             float: right;
+			
+			
         }
+		.resultElement{
+			font-size: 20px;
+			font-family: "Times New Roman", Times, serif;
+			background-color: rgb(160, 160, 224);
+			color: white;
+			height: 50px;
+    width: 150px;
+	margin-left: 10px;
+		}
+		.textArea{
+			font-size: 25px;
+			font-family: "Times New Roman", Times, serif;
+			background-color: rgb(160, 160, 224);
+			color: white;
+			height: 50px;
+			width:150px;
+			text-align: justify;
+			margin-left: 10px;
+			 
+		}
+		.logoutContainer{
+		 position: absolute;
+  bottom: 10px;
+  right: 185px;
+
+		}
 
         .blockContainer {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             overflow-y: auto;
-            height : 40%;
+            height : 50%;
 
         }
 
@@ -37,21 +65,21 @@
             flex-direction: row;
             flex-wrap: wrap;
             overflow-y: auto;
-            height : 12%;
+            height : 50%;
 
         }
-        .trigonometryContainer {
+        /* .trigonometryContainer {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             overflow-y: auto;
             height : 12%;
 
-        }
+        } */
 
         .number {
-            height: 50px;
-            width: 50px;
+            height: 80px;
+            width: 80px;
             background-color: rgb(160, 160, 224);
             margin: 5px;
             display: flex;
@@ -61,8 +89,8 @@
         }
 
         .numberText {
-            color: rgb(247, 250, 252);
-            font-size: 25px;
+            color: rgb(14, 14, 14);
+            font-size: 40px;
         }
 
         .sbExpression {
@@ -74,14 +102,15 @@
 
         .sumExpression{
             
-            width: 20px;
+            width: 30px;
+            height: 30px;
             display: flex;
 
         }
 
         .operatorExpression {
-            height: 50px;
-            width: 80px;
+            height: 110px;
+            width: 110px;
             background-color: rgb(160, 160, 224);
             margin: 5px;
             display: flex;
@@ -89,7 +118,7 @@
             align-items: center;
         }
 
-        .trigExpression {
+        /* .trigExpression {
             height: 50px;
             width: 80px;
             background-color: rgb(160, 160, 224);
@@ -97,7 +126,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
+        } */
 
         
 
