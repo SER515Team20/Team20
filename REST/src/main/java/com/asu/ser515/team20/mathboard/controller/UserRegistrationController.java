@@ -32,4 +32,15 @@ public class UserRegistrationController {
     public User ExpressionEvaluator(@PathVariable(value = "userId") String userId, @PathVariable(value = "password") String password) {
         return userService.getUsers(userId, password);
     }
+
+    @CrossOrigin
+    @RequestMapping(value = "/DeleteUser/{userId}", method = RequestMethod.DELETE)
+    public int delUser(@PathVariable(value = "userId") String userId){
+        return userService.deleteUser(userId);
+    }
+
+
+
+
+
 }

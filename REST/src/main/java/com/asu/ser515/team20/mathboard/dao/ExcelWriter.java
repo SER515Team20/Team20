@@ -56,17 +56,18 @@ public class ExcelWriter {
     /*Below code will be uncommented when delete functionality is implemented. Which is next sprint*/
 
 
-    /*public static int DeleteUser(String userId) {
+    public static int DeleteUser(String userId) {
         try {
 
-            String SAMPLE_XLSX_FILE_PATH = "./sample-xlsx-file.xlsx";
+            String SAMPLE_XLSX_FILE_PATH = "./sample-xlsx-file.xlsx";  // push this to app.properties
             FileInputStream inputStream = new FileInputStream(SAMPLE_XLSX_FILE_PATH);
             // Obtain a workbook from the excel file
             Workbook workbook = WorkbookFactory.create(inputStream);
-            Sheet sheet = workbook.getSheet("Employee");
+            Sheet sheet = workbook.getSheet("Users");
             if (sheet != null) {
                 int rowNoForDeletion = searchUserForDeletion(userId);
                 Row row = sheet.getRow(rowNoForDeletion);
+
                 sheet.removeRow(row);
 
                 inputStream.close();
@@ -94,7 +95,7 @@ public class ExcelWriter {
             String SAMPLE_XLSX_FILE_PATH = "./sample-xlsx-file.xlsx";
 
             Workbook workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
-            Sheet sheet = workbook.getSheet("Employee");
+            Sheet sheet = workbook.getSheet("Users");
 
             boolean isUserPresent = false;
             DataFormatter dataFormatter = new DataFormatter();
@@ -117,6 +118,6 @@ public class ExcelWriter {
 
         return 0;
 
-    }*/
+    }
 }
 
