@@ -9,6 +9,10 @@
 <body>
     <div class="numberContainer">
         <div class="blockContainer">
+                <div class="number" id="0" draggable="true" ondragstart="drag(event)">
+                        <span class="numberText">0</span>
+        
+                    </div>
             <div class="number" id="1" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">1</span>
 
@@ -45,10 +49,7 @@
                 <span class="numberText">9</span>
 
             </div>
-            <div class="number" id="0" draggable="true" ondragstart="drag(event)">
-                <span class="numberText">0</span>
-
-            </div>
+           
             <div class="number" id="plus" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">+</span>
 
@@ -66,14 +67,6 @@
 
             </div>
 
-            <div class="number" id="curlybrace1" draggable="true" ondragstart="drag(event)">
-                <span class="numberText">(</span>
-
-            </div>
-            <div class="number" id="curlybrace2" draggable="true" ondragstart="drag(event)">
-                <span class="numberText">)</span>
-
-            </div>
             
     
         </div>
@@ -98,6 +91,15 @@
             <span class="numberText">/</span>
             <span id="rightNum"><input type="text" class="sumExpression"></input></span>
         </div>
+        
+        <div class="operatorExpression" id="curlybrace1" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">(</span>
+
+            </div>
+            <div class="operatorExpression" id="curlybrace2" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">)</span>
+
+            </div>
 
  
 
@@ -143,12 +145,13 @@
 
 
     <div class="resultContainer" id="resultContainer">
-            <div>
-                    <button name = "logout" value="logout" id="logout" onclick="logout()">Logout</button>
+            <div class="logoutContainer">
+                    <button name = "logout" value="logout" id="logout" onclick="logout()" class="resultElement" >Logout</button>
                 </div>
-      <button onclick="calculateResult()"> Calculate</button><br> 
-        <button onclick="clearForm()"> Clear</button><br>
-        <textarea id="finalResult" readonly> </textarea>
+      <button onclick="calculateResult()" class="resultElement"> Calculate</button><br><br>
+       
+        <textarea id="finalResult" readonly class="textArea"> </textarea><br><br>
+		 <button onclick="clearForm()" class="resultElement"> Clear</button><br>
         
 
     </div>
