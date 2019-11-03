@@ -53,30 +53,40 @@ public class ExcelWriter {
         return true;
     }
 
-    public static boolean DeleteUser(String userId) {
+    /*Below code will be uncommented when delete functionality is implemented. Which is next sprint*/
+
+
+    /*public static int DeleteUser(String userId) {
         try {
 
-            String SAMPLE_XLSX_FILE_PATH = "./sample-xlsx-file.xlsx";  // push this to app.properties
+            String SAMPLE_XLSX_FILE_PATH = "./sample-xlsx-file.xlsx";
             FileInputStream inputStream = new FileInputStream(SAMPLE_XLSX_FILE_PATH);
             // Obtain a workbook from the excel file
             Workbook workbook = WorkbookFactory.create(inputStream);
-            Sheet sheet = workbook.getSheet("Users");
+            Sheet sheet = workbook.getSheet("Employee");
             if (sheet != null) {
                 int rowNoForDeletion = searchUserForDeletion(userId);
                 Row row = sheet.getRow(rowNoForDeletion);
                 sheet.removeRow(row);
+
                 inputStream.close();
                 FileOutputStream fileOut = new FileOutputStream(SAMPLE_XLSX_FILE_PATH);
                 workbook.write(fileOut);
                 fileOut.close();
+
                 // Closing the workbook
                 workbook.close();
-                return true;
+                return 1;
             }
+
         } catch (Exception ex) {
+
             ex.printStackTrace();
         }
-        return false;
+
+
+        return 0;
+
     }
 
     private static int searchUserForDeletion(String user) {
@@ -84,7 +94,7 @@ public class ExcelWriter {
             String SAMPLE_XLSX_FILE_PATH = "./sample-xlsx-file.xlsx";
 
             Workbook workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
-            Sheet sheet = workbook.getSheet("Users");
+            Sheet sheet = workbook.getSheet("Employee");
 
             boolean isUserPresent = false;
             DataFormatter dataFormatter = new DataFormatter();
@@ -98,12 +108,15 @@ public class ExcelWriter {
 
                 }
             }
+            System.out.println();
+
             workbook.close();
         } catch (Exception ex) {
-            ex.printStackTrace();
+            System.out.println(ex);
         }
+
         return 0;
 
-    }
+    }*/
 }
 
