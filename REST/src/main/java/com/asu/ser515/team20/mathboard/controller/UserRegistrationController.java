@@ -19,6 +19,7 @@ public class UserRegistrationController {
 
     @Autowired
     private UserService userService;
+
     @CrossOrigin
     @RequestMapping(value = "/RegisterUser", method = RequestMethod.POST)
     @ApiOperation(value = "Provide a user to be registered in JSON format",response = ResponseEntity.class)
