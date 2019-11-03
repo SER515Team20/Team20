@@ -56,14 +56,14 @@ public class ExcelWriter {
     /*Below code will be uncommented when delete functionality is implemented. Which is next sprint*/
 
 
-    /*public static int DeleteUser(String userId) {
+    public boolean DeleteUser(String userId) {
         try {
 
             String SAMPLE_XLSX_FILE_PATH = "./sample-xlsx-file.xlsx";
             FileInputStream inputStream = new FileInputStream(SAMPLE_XLSX_FILE_PATH);
             // Obtain a workbook from the excel file
             Workbook workbook = WorkbookFactory.create(inputStream);
-            Sheet sheet = workbook.getSheet("Employee");
+            Sheet sheet = workbook.getSheet("Users");
             if (sheet != null) {
                 int rowNoForDeletion = searchUserForDeletion(userId);
                 Row row = sheet.getRow(rowNoForDeletion);
@@ -76,17 +76,13 @@ public class ExcelWriter {
 
                 // Closing the workbook
                 workbook.close();
-                return 1;
+                return true;
             }
 
         } catch (Exception ex) {
-
             ex.printStackTrace();
         }
-
-
-        return 0;
-
+        return false;
     }
 
     private static int searchUserForDeletion(String user) {
@@ -94,15 +90,11 @@ public class ExcelWriter {
             String SAMPLE_XLSX_FILE_PATH = "./sample-xlsx-file.xlsx";
 
             Workbook workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
-            Sheet sheet = workbook.getSheet("Employee");
-
-            boolean isUserPresent = false;
+            Sheet sheet = workbook.getSheet("Users");
             DataFormatter dataFormatter = new DataFormatter();
             for (Row row : sheet) {
                 Cell cellUser = row.getCell(0);
                 if (cellUser.getStringCellValue().equals(user)) {
-
-                    isUserPresent = true;
                     return row.getRowNum();
 
 
@@ -112,11 +104,11 @@ public class ExcelWriter {
 
             workbook.close();
         } catch (Exception ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
 
         return 0;
 
-    }*/
+    }
 }
 

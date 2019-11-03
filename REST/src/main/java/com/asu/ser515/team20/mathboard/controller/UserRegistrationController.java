@@ -33,4 +33,19 @@ public class UserRegistrationController {
     public User getUser(@PathVariable(value = "userId") String userId, @PathVariable(value = "password") String password) {
         return userService.getUsers(userId, password);
     }
+
+    @CrossOrigin
+    @RequestMapping(value = "/getUserforDelete/{userId}", method = RequestMethod.GET)
+    @ApiOperation(value = "Provide userId",response = User.class)
+    public User ExpressionEvaluator(@PathVariable(value = "userId") String userId ) {
+        return userService.getUsersforDelete(userId);
+    }
+
+
+    @CrossOrigin
+    @RequestMapping(value = "/DeleteUser/{userId}", method = RequestMethod.GET)
+    @ApiOperation(value = "Provide a user to be deleted in JSON format",response = ResponseEntity.class)
+    public ResponseEntity<String> delUser(@PathVariable(value = "userId") String userId){
+        return userService.deleteUser(userId) ? new ResponseEntity<>("User Deleted Successfully", HttpStatus.OK) : new ResponseEntity<>("Failed to delete user.", HttpStatus.EXPECTATION_FAILED);
+    }
 }
