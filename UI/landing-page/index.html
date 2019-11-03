@@ -9,6 +9,10 @@
 <body>
     <div class="numberContainer">
         <div class="blockContainer">
+                <div class="number" id="0" draggable="true" ondragstart="drag(event)">
+                        <span class="numberText">0</span>
+        
+                    </div>
             <div class="number" id="1" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">1</span>
 
@@ -45,10 +49,43 @@
                 <span class="numberText">9</span>
 
             </div>
-            <div class="number" id="0" draggable="true" ondragstart="drag(event)">
-                <span class="numberText">0</span>
+			<div class="number" id="A" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">A</span>
 
             </div>
+            <div class="number" id="B" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">B</span>
+
+            </div>
+            <div class="number" id="C" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">C</span>
+
+            </div>
+            <div class="number" id="D" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">D</span>
+
+            </div>
+            <div class="number" id="E" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">E</span>
+
+            </div>
+            <div class="number" id="F" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">F</span>
+
+            </div>
+            <div class="number" id="G" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">G</span>
+
+            </div>
+            <div class="number" id="H" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">H</span>
+
+            </div>
+            <div class="number" id="9" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">I</span>
+
+            </div>
+           
             <div class="number" id="plus" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">+</span>
 
@@ -66,14 +103,6 @@
 
             </div>
 
-            <div class="number" id="curlybrace1" draggable="true" ondragstart="drag(event)">
-                <span class="numberText">(</span>
-
-            </div>
-            <div class="number" id="curlybrace2" draggable="true" ondragstart="drag(event)">
-                <span class="numberText">)</span>
-
-            </div>
             
     
         </div>
@@ -98,6 +127,15 @@
             <span class="numberText">/</span>
             <span id="rightNum"><input type="text" class="sumExpression"></input></span>
         </div>
+        
+        <div class="operatorExpression" id="curlybrace1" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">(</span>
+
+            </div>
+            <div class="operatorExpression" id="curlybrace2" draggable="true" ondragstart="drag(event)">
+                <span class="numberText">)</span>
+
+            </div>
 
  
 
@@ -130,7 +168,7 @@
         </div> -->
 
     </div>
-    <div id="sdCon" class="sandboxContainer"  ondrop="drop(event)"  ondragover="allowDrop(event)" >
+    <div id="sdCon" class="sandboxContainer"  ondrop="drop(event)"  ondragover="allowDrop(event)" ondragstart="drag(event)">
         <div class="operatorContainer sbExpression " id="sandboxExpression"   >
             
 
@@ -143,12 +181,20 @@
 
 
     <div class="resultContainer" id="resultContainer">
-            <div>
-                    <button name = "logout" value="logout" id="logout" onclick="logout()">Logout</button>
+            <div class="logoutContainer">
+                    <button name = "logout" value="logout" id="logout" onclick="logout()" class="resultElement" >Logout</button>
                 </div>
-      <button onclick="calculateResult()"> Calculate</button><br> 
-        <button onclick="clearForm()"> Clear</button><br>
-        <textarea id="finalResult" readonly> </textarea>
+
+		
+		
+      <button onclick="calculateResult()" class="resultElement"> Calculate</button><br><br>
+       
+        <textarea id="finalResult" readonly class="textArea"> </textarea><br><br>
+		 <button onclick="clearForm()" class="resultElement"> Clear</button><br>
+    <button class = "deleteBtn" onclick="deleteLast()">Click to delete Last Operation</button>
+			<div class = "deleteArea" ondrop="deleteSelected(event)" ondragover="allowDrop(event)" style = "height:100px; width:200px; background-color:grey">
+			<label>Drop here to delete</label>
+		</div>
         
 
     </div>

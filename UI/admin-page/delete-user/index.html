@@ -6,11 +6,27 @@
 <script>
 function deleteconfirm() {
 	var user = document.getElementById("name").value;
+	var userid = document.getElementById("userIDText").value;
 	if(user.length===0){
 
 	} else {
 		confirm("Are You Sure!");
+		deleteUserAPI(userid);
 	}
+}
+
+function deleteUserAPI(userid){
+	var url = "http://127.0.0.1:8080/DeleteUser/" + userid;
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+             alert(this.responseText);
+         }
+    };
+	xhttp.open("GET", url, false);
+	xhttp.send();
+
+
 }
 function searchUser() {
 	var userid = document.getElementById("userIDText").value;
@@ -20,8 +36,10 @@ function searchUser() {
 		searchAPICall(userid);
 	}
 }
+
+
 function searchAPICall(userid) {
-	var url = "http://127.0.0.1:8080/getUser/" + userid;
+	var url = "http://127.0.0.1:8080/getUserforDelete/" + userid;
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
          if (this.readyState == 4 && this.status == 200) {
@@ -30,7 +48,7 @@ function searchAPICall(userid) {
 			 document.getElementById('userType').value = response.role;
          }
     };
-	xhttp.open("GET", url, true);
+	xhttp.open("GET", url, false);
 	xhttp.send();
 }
 function cancelreg() {
