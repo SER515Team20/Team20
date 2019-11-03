@@ -53,10 +53,7 @@ public class ExcelWriter {
         return true;
     }
 
-    /*Below code will be uncommented when delete functionality is implemented. Which is next sprint*/
-
-
-    public static int DeleteUser(String userId) {
+    public static boolean DeleteUser(String userId) {
         try {
 
             String SAMPLE_XLSX_FILE_PATH = "./sample-xlsx-file.xlsx";  // push this to app.properties
@@ -67,27 +64,19 @@ public class ExcelWriter {
             if (sheet != null) {
                 int rowNoForDeletion = searchUserForDeletion(userId);
                 Row row = sheet.getRow(rowNoForDeletion);
-
                 sheet.removeRow(row);
-
                 inputStream.close();
                 FileOutputStream fileOut = new FileOutputStream(SAMPLE_XLSX_FILE_PATH);
                 workbook.write(fileOut);
                 fileOut.close();
-
                 // Closing the workbook
                 workbook.close();
-                return 1;
+                return true;
             }
-
         } catch (Exception ex) {
-
             ex.printStackTrace();
         }
-
-
-        return 0;
-
+        return false;
     }
 
     private static int searchUserForDeletion(String user) {
@@ -109,13 +98,10 @@ public class ExcelWriter {
 
                 }
             }
-            System.out.println();
-
             workbook.close();
         } catch (Exception ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
-
         return 0;
 
     }

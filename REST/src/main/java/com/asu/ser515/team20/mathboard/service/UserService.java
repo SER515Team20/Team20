@@ -26,7 +26,11 @@ public class UserService {
        return excelReader.searchUser(userId, pass);
     }
 
-    public int deleteUser(String userId){
+    public User getUsersforDelete(String userId) {
+        return excelReader.searchUserForDelete(userId);
+    }
+
+    public boolean deleteUser(String userId){
         return excelWriter.DeleteUser(userId);
     }
 }

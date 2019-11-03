@@ -34,9 +34,18 @@ public class UserRegistrationController {
     }
 
     @CrossOrigin
-    @RequestMapping(value = "/DeleteUser/{userId}", method = RequestMethod.DELETE)
-    public int delUser(@PathVariable(value = "userId") String userId){
-        return userService.deleteUser(userId);
+    @RequestMapping(value = "/getUserforDelete/{userId}", method = RequestMethod.GET)
+    @ApiOperation(value = "Provide userId",response = User.class)
+    public User ExpressionEvaluator(@PathVariable(value = "userId") String userId ) {
+        return userService.getUsersforDelete(userId);
+    }
+
+
+    @CrossOrigin
+    @RequestMapping(value = "/DeleteUser/{userId}", method = RequestMethod.GET)
+    @ApiOperation(value = "Provide a user to be deleted in JSON format",response = ResponseEntity.class)
+    public ResponseEntity<String> delUser(@PathVariable(value = "userId") String userId){
+        return userService.deleteUser(userId) ? new ResponseEntity<>("User Deleted Successfully", HttpStatus.OK) : new ResponseEntity<>("Failed to delete user.", HttpStatus.EXPECTATION_FAILED);
     }
 
 
