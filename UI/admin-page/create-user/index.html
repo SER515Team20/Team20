@@ -1,6 +1,13 @@
 <html>
     <head>
         <title>Create User</title>
+		<script>
+			if((sessionStorage.getItem("name") === null 
+				|| sessionStorage.getItem("name") === "")
+				|| sessionStorage.getItem("role") !== "admin") {
+					document.location.href="/UI/";
+			}
+		</script>
         <link rel="stylesheet" href ="../../styles.css">
         <script src = "createuser.js"></script>
     </head>

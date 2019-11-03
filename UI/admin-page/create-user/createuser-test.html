@@ -34,7 +34,7 @@
 		assert.equal(checkPassword("password", "password"), true);
 	});
 	QUnit.module("REST API Unit Test");
-	QUnit.test( "Register user API call", function(assert) {
+	QUnit.test( "Register student API call", function(assert) {
 		var stub = sinon.stub(window, "alert").callsFake(function(msg) { return false; } );
 		var params = {
 			'userid' : 'test',
@@ -42,6 +42,21 @@
 			'role' : 'student',
 			'grade' : 'high',
 			'email' : 'abc@gmail.com',
+			'password' : 'pwd*'
+		};
+		assert.ok(true, regUserAPICall(params));
+		assert.equal(stub.callCount, 1);
+		assert.equal(stub.getCall(0).args[0], "User Added Successfully");
+		stub.restore();
+	});
+	QUnit.test( "Register admin API call", function(assert) {
+		var stub = sinon.stub(window, "alert").callsFake(function(msg) { return false; } );
+		var params = {
+			'userid' : 'admin',
+			'name' : 'admin',
+			'role' : 'admin',
+			'grade' : '',
+			'email' : 'admin@gmail.com',
 			'password' : 'pwd*'
 		};
 		assert.ok(true, regUserAPICall(params));
