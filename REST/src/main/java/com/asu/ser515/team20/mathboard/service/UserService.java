@@ -25,12 +25,4 @@ public class UserService {
     public User getUsers(String userId, String pass) {
        return excelReader.searchUser(userId, pass);
     }
-
-    public User getUsersforDelete(String userId) {
-        return excelReader.searchUserForDelete(userId);
-    }
-
-    public boolean deleteUser(String userId){
-        return excelWriter.DeleteUser(userId);
-    }
 }

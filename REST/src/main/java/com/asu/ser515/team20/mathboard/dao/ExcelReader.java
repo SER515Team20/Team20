@@ -38,29 +38,4 @@ public class ExcelReader {
         }
         return presentUser;
     }
-
-    public User searchUserForDelete(String userID) {
-
-        String SAMPLE_XLSX_FILE_PATH = "sample-xlsx-file.xlsx";
-        User presentUser = new User();
-        try {
-            Workbook workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
-            Sheet sheet = workbook.getSheet("Users");
-            for (Row row : sheet) {
-                Cell cellUser = row.getCell(0);
-                if (cellUser.getStringCellValue().equals(userID)) {
-                    presentUser.setUserid(row.getCell(0).getStringCellValue());
-                    presentUser.setName(row.getCell(1).getStringCellValue());
-                    presentUser.setEmail(row.getCell(2).getStringCellValue());
-                    presentUser.setRole(row.getCell(3).getStringCellValue());
-                    presentUser.setGrade(row.getCell(4).getStringCellValue());
-                    presentUser.setPassword(row.getCell(5).getStringCellValue());
-                 }
-            }
-            workbook.close();
-        } catch (InvalidFormatException | IOException e) {
-            e.printStackTrace();
-        }
-        return presentUser;
-    }
 }
