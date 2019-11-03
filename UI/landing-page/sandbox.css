@@ -22,6 +22,34 @@
             background-color: white;
             float: right;
         }
+		
+		.resultElement{
+			font-size: 20px;
+			font-family: "Times New Roman", Times, serif;
+			background-color: rgb(160, 160, 224);
+			color: white;
+			height: 50px;
+			width: 150px;
+			margin-left: 10px;
+		}
+		.textArea{
+			font-size: 25px;
+			font-family: "Times New Roman", Times, serif;
+			background-color: rgb(160, 160, 224);
+			color: white;
+			height: 50px;
+			width:150px;
+			text-align: justify;
+			margin-left: 10px;
+
+		}
+		.logoutContainer{
+			position: absolute;
+			bottom: 10px;
+			right: 185px;
+
+		}
+		
 
         .blockContainer {
             display: flex;
@@ -50,8 +78,8 @@
         }
 
         .number {
-            height: 50px;
-            width: 50px;
+            height: 80px;
+            width: 80px;
             background-color: rgb(160, 160, 224);
             margin: 5px;
             display: flex;
@@ -61,8 +89,8 @@
         }
 
         .numberText {
-            color: rgb(247, 250, 252);
-            font-size: 25px;
+            color: rgb(14, 14, 14);
+            font-size: 40px;
         }
 
         .sbExpression {
@@ -74,14 +102,15 @@
 
         .sumExpression{
             
-            width: 20px;
+            width: 30px;
+			height: 30px;
             display: flex;
 
         }
 
         .operatorExpression {
-            height: 50px;
-            width: 80px;
+            height: 110px;
+            width: 110px;
             background-color: rgb(160, 160, 224);
             margin: 5px;
             display: flex;

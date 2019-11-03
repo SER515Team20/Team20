@@ -1,3 +1,4 @@
+var index = 0;
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
@@ -15,19 +16,15 @@ function drop(ev) {
     var parent = document.getElementById("sandboxExpression");
     var doc = document.createDocumentFragment();
     doc.appendChild(copyNbr);
+	copyNbr.setAttribute("draggable","true");
+	copyNbr.id = "sandboxItem" + index++ ;
     parent.appendChild(doc);
-    //ev.currentTarget.appendChild(document.getElementById(data));
-
-    //var div = document.createElement("div");
-    // doc.appendChild(div);
     if (orgNbr.className === "number")
         copyNbr.setAttribute("class", "blockContainer number numberText");
     else if (orgNbr.className === "operatorExpression")
         copyNbr.setAttribute("class", "blockContainer operatorExpression numberText");
     else if (orgNbr.className === "trigExpression")
         copyNbr.setAttribute("class", "blockContainer trigExpression  numberText");
-    // div.innerHTML = "1";
-    //calculateResult();
 
 }
 
@@ -44,19 +41,10 @@ function calculateResult() {
                 rs += (span[1].childNodes[0].value) + (span[3].innerHTML) + (span[5].childNodes[0].value);
             }
 
-
-            // else if (items[i].className === "blockContainer trigExpression  numberText") {
-            //     span = items[i].childNodes;
-            //     rs += (span[1].childNodes[1].innerHTML) + (span[3].value) + (span[5].childNodes[0].innerHTML);
-            //     console.log(rs);
-            // }
             else if (items[i].nodeName != "#text") {
                 span = items[i].childNodes;
                 rs += (span[1].innerHTML);
             }
-
-
-
 
         }
         console.log(rs);
@@ -75,3 +63,13 @@ function clearForm() {
     document.getElementById("finalResult").value = 0;
 
 }
+
+function deleteLast() {
+	var element = document.getElementById("sandboxItem"+(--index));
+	element.parentNode.removeChild(element);
+}
+function deleteSelected(event) {
+	event.preventDefault();
+    var element = event.dataTransfer.getData("text");
+	document.getElementById(element).remove();
+} 
