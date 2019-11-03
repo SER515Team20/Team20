@@ -23,14 +23,14 @@ public class UserRegistrationController {
     @CrossOrigin
     @RequestMapping(value = "/RegisterUser", method = RequestMethod.POST)
     @ApiOperation(value = "Provide a user to be registered in JSON format",response = ResponseEntity.class)
-    public ResponseEntity<String> getUser(@RequestBody User user){
+    public ResponseEntity<String> createUser(@RequestBody User user){
         return userService.addUser(user) ? new ResponseEntity<>("User Added Successfully", HttpStatus.OK) : new ResponseEntity<>("Failed to add user.", HttpStatus.EXPECTATION_FAILED);
     }
 
     @CrossOrigin
     @RequestMapping(value = "/getUser/{userId}/{password}", method = RequestMethod.GET)
     @ApiOperation(value = "Provide userId",response = User.class)
-    public User ExpressionEvaluator(@PathVariable(value = "userId") String userId, @PathVariable(value = "password") String password) {
+    public User getUser(@PathVariable(value = "userId") String userId, @PathVariable(value = "password") String password) {
         return userService.getUsers(userId, password);
     }
 }
