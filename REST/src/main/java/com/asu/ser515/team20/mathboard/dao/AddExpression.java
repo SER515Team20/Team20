@@ -48,7 +48,7 @@ public class AddExpression {
            {
                Cell cell = row.createCell(i);
                cell.setCellValue(details[i]);       // setting cell values 
-               
+               sheet.autoSizeColumn(i);             // autosizing for better readability
            }
            inputStream.close();
            FileOutputStream fileOut = new FileOutputStream(SAMPLE_XLSX_FILE_PATH);
