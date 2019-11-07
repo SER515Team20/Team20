@@ -90,10 +90,20 @@ function toggle(id) {
 	}
 }
 
+function displayUserName(user, userName){
+			var guest = document.createElement("label");
+			var greetings = document.createTextNode("Hello, "+userName+"! "); 
+			guest.appendChild(greetings);
+			guest.id = "Guest";
+			user.appendChild(guest);
+}
+
+
 function init() {
 	var user = document.getElementById("loginContainer");
 	if (sessionStorage.getItem("name") === null 
 		|| sessionStorage.getItem("name") === "") {
+			displayUserName(user, "Guest");
 			var login = document.createElement("BUTTON");
 			var link = document.createTextNode("Login"); 
 			login.appendChild(link);
@@ -101,13 +111,16 @@ function init() {
 			login.id = "Login";
 			login.setAttribute("onclick", "document.getElementById('id01').style.display='block'");
 			user.appendChild(login);
+			
 	} else {
 		var logout = document.createElement("BUTTON");
-		var link = document.createTextNode("Logout"); 
+		var link = document.createTextNode("Logout");
+			displayUserName(user, sessionStorage.getItem("name"));
 			logout.appendChild(link);
 			logout.name = "Logout";
 			logout.id = "Logout";
 			logout.setAttribute("onclick","logout();");
 			user.appendChild(logout);
+			
 	}
 }
