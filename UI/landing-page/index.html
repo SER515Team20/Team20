@@ -85,6 +85,7 @@
 
             </div>
         </div>
+		<div id ="middleLevel">
 		<button class="toggleText" onclick="toggle('paraContainer')">
 			<p>Parenthesis Operations</p>
 		</button>
@@ -119,6 +120,8 @@
 
             </div>
 		</div>	
+		</div>
+		<div id ="highLevel">
 		<button class="toggleText" onclick="toggle('variablesContainer')">
 			<p>Variables</p>
 		</button>
@@ -147,32 +150,9 @@
                 <span class="numberText">z</span>
 
             </div>
+		</div>
         </div>
 
-        <!-- <div class="trigonometryContainer">
-            
-        <div class="trigExpression" id="sine" draggable="true" ondragstart="drag(event)">
-            <span class="numberText">sin (</span>
-            <span id="sineinput"><input type="text" class="sumExpression"></input></span>
-            <span class="numberText">)</span>
-        </div>
-
-        <div class="trigExpression" id="sine" draggable="true" ondragstart="drag(event)">
-            <span class="numberText">cos (</span>
-            <span id="cosineinput"><input type="text" class="sumExpression"></input></span>
-            <span class="numberText">)</span>
-        </div>
-
-        <div class="trigExpression" id="sine" draggable="true" ondragstart="drag(event)">
-            <span class="numberText">tan (</span>
-            <span id="taninput"><input type="text" class="sumExpression"></input></span>
-            <span class="numberText">)</span>
-        </div>
-
-        
-
-        
-        </div> -->
 
     </div>
     <div id="sdCon" class="sandboxContainer"  ondrop="drop(event)"  ondragover="allowDrop(event)" ondragstart="drag(event)">
@@ -180,11 +160,18 @@
         </div>
     </div>
 	<script>
-      $("#sandboxExpression").sortable();
-		$("#sandboxExpression").on('drop', ".deleteArea", function () {
-    $(this).remove();
-});
+      $("#sandboxExpression").sortable({
+        over: function(e, ui) { sortableIn = 1; },
+       out: function(e, ui) { sortableIn = 0; },
+       beforeStop: function (event, ui) {
+           newItem = ui.item;
+           if (sortableIn == 0) {
+             ui.item.remove();
+          }
+       }
+      });
     </script>
+	
 
 
 
