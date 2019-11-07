@@ -87,8 +87,8 @@
         } */
 
         .number {
-            height: 80px;
-            width: 80px;
+            height: 75px;
+            width: 75px;
             background-color: rgb(160, 160, 224);
             margin: 5px;
             display: flex;
@@ -98,8 +98,8 @@
         }
 		
 		.number:hover {
-			height:85px;
-			width:85px;
+			height:80px;
+			width:80px;
 			background-color: rgb(200, 200, 250);
 		}
 
@@ -186,16 +186,6 @@
 		}
 		
 
-        /* .trigExpression {
-            height: 50px;
-            width: 80px;
-            background-color: rgb(160, 160, 224);
-            margin: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        } */
-		
 		.toggleText{
 			background-color: rgb(200, 200, 250);
 			border:none;
