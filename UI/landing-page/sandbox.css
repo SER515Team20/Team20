@@ -147,6 +147,21 @@
 			width:145px;
 			background-color: #e60000;
 		}
+		.paranthesis {
+            
+            background-color: #ff6666;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			border-radius:25px;
+        }
+		
+		.paranthesis:hover {
+			
+			background-color: #e60000;
+		}
+		
 
         /* .trigExpression {
             height: 50px;
