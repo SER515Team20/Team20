@@ -100,6 +100,21 @@
             color: rgb(14, 14, 14);
             font-size: 40px;
         }
+		.variable {
+            height: 80px;
+            width: 80px;
+            background-color: rgb(176, 254, 071);
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			border-radius : 25px 10px 25px 10px;
+        }
+		.variable:hover {
+			height:85px;
+			width:85px;
+			background-color: rgb(136, 203, 045);
+		}
 
         .sbExpression {
             
