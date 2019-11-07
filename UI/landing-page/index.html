@@ -20,7 +20,7 @@
 	</div>
     <div class="numberContainer">
 		<button class="toggleText" onclick="toggle('blockContainer')">
-			<p>Numbers</p>
+			<p class="blockTitle">Numbers</p>
 		</button>
         <div class="blockContainer" id="blockContainer">
             <div class="number" id="0" draggable="true" ondragstart="drag(event)">
@@ -65,28 +65,28 @@
             </div>
 		</div>
 		<button class="toggleText" onclick="toggle('opContainer')">
-			<p>Operators</p>
+			<p class="blockTitle">Operators</p>
 		</button>
         <div class="blockContainer" id="opContainer">
-            <div class="number" id="plus" draggable="true" ondragstart="drag(event)">
+            <div class="operator" id="plus" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">+</span>
 
             </div>
-            <div class="number" id="minus" draggable="true" ondragstart="drag(event)">
+            <div class="operator" id="minus" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">-</span>
 
             </div>
-            <div class="number" id="asterisk" draggable="true" ondragstart="drag(event)">
+            <div class="operator" id="asterisk" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">*</span>
 
             </div>
-            <div class="number" id="backslash" draggable="true" ondragstart="drag(event)">
+            <div class="operator" id="backslash" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">/</span>
 
             </div>
         </div>
 		<button class="toggleText" onclick="toggle('paraContainer')">
-			<p>Parenthesis Operations</p>
+			<p class="blockTitle">Parenthesis Operations</p>
 		</button>
         <div class="operatorContainer" id="paraContainer">
             <div class="operatorExpression" id="addition" draggable="true" ondragstart="drag(event)">
@@ -110,40 +110,40 @@
 				<span id="rightNum"><input type="text" class="sumExpression"></input></span>&nbsp;)
 			</div>
         
-			<div class="number" id="curlybrace1" draggable="true" ondragstart="drag(event)">
+			<div class="number paranthesis" id="curlybrace1" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">(</span>
 
             </div>
-            <div class="number" id="curlybrace2" draggable="true" ondragstart="drag(event)">
+            <div class="number paranthesis" id="curlybrace2" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">)</span>
 
             </div>
 		</div>	
 		<button class="toggleText" onclick="toggle('variablesContainer')">
-			<p>Variables</p>
+			<p class="blockTitle">Variables</p>
 		</button>
 		<div class="operatorContainer" id="variablesContainer">
-			<div class="number" id="A" draggable="true" ondragstart="drag(event)">
+			<div class="variable" id="A" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">a</span>
 
             </div>
-            <div class="number" id="B" draggable="true" ondragstart="drag(event)">
+            <div class="variable" id="B" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">b</span>
 
             </div>
-            <div class="number" id="C" draggable="true" ondragstart="drag(event)">
+            <div class="variable" id="C" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">c</span>
 
             </div>
-            <div class="number" id="D" draggable="true" ondragstart="drag(event)">
+            <div class="variable" id="D" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">x</span>
 
             </div>
-            <div class="number" id="E" draggable="true" ondragstart="drag(event)">
+            <div class="variable" id="E" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">y</span>
 
             </div>
-            <div class="number" id="F" draggable="true" ondragstart="drag(event)">
+            <div class="variable" id="F" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">z</span>
 
             </div>
