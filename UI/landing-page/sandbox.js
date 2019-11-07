@@ -1,7 +1,9 @@
 var index = 0;
 window.onload = function() {
 	init();
+	
 }
+
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
@@ -82,12 +84,13 @@ function deleteSelected(event) {
 }
 function toggle(id) {
 	var toggleBtn = document.getElementById(id);
-	if (toggleBtn.style.display === "none") {
+	if (toggleBtn.style.display === "none" ) {
 		toggleBtn.style.display = "flex";
 	}
 	else {
 		toggleBtn.style.display = "none";
 	}
+	
 }
 
 function init() {
@@ -110,4 +113,28 @@ function init() {
 			logout.setAttribute("onclick","logout();");
 			user.appendChild(logout);
 	}
+	
+	
+	if (sessionStorage.getItem("grade")==="primary"){
+		var middleLevel = document.getElementById("middleLevel");
+		var highLevel = document.getElementById("highLevel");
+		middleLevel.style.display = "none";
+		highLevel.style.display = "none";
+		document.getElementById("asterisk").style.display = "none";
+		document.getElementById("backslash").style.display = "none";
+	}
+	
+	if (sessionStorage.getItem("grade")==="middle"){
+		var highLevel = document.getElementById("highLevel");
+		highLevel.style.display = "none";
+	}
 }
+
+function showHide(){
+	if(document.getElementById("grade").value === 'primary'){
+	}
+		
+	
+}
+	
+	
