@@ -28,6 +28,15 @@ function drop(ev) {
 		if (orgNbr.className === "number") {
 			copyNbr.setAttribute("class", "blockContainer number numberText");
 		}
+		else if (orgNbr.className === "operator") {
+			copyNbr.setAttribute("class", "blockContainer operator numberText");
+		}
+		else if (orgNbr.className === "number paranthesis") {
+			copyNbr.setAttribute("class", "blockContainer number paranthesis numberText");
+		}
+		else if (orgNbr.className === "variable") {
+			copyNbr.setAttribute("class", "blockContainer variable numberText");
+		}
 		else if (orgNbr.className === "operatorExpression") {
 			copyNbr.setAttribute("class", "blockContainer operatorExpression numberText");
 		}
@@ -100,6 +109,7 @@ function init() {
 			login.name = "Login";
 			login.id = "Login";
 			login.setAttribute("onclick", "document.getElementById('id01').style.display='block'");
+			login.setAttribute("class", "logButton");
 			user.appendChild(login);
 	} else {
 		var logout = document.createElement("BUTTON");
@@ -108,6 +118,7 @@ function init() {
 			logout.name = "Logout";
 			logout.id = "Logout";
 			logout.setAttribute("onclick","logout();");
+			login.setAttribute("class", "logButton");
 			user.appendChild(logout);
 	}
 }

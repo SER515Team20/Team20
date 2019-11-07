@@ -38,6 +38,11 @@
 			width: 150px;
 			margin-left: 10px;
 		}
+		.resultElement:hover{
+			background-color: rgb(200, 200, 250);
+			color:black;
+			
+		}
 		.textArea{
 			font-size: 35px;
 			background-color: rgb(200, 200, 250);
@@ -151,7 +156,7 @@
 
         .operatorExpression {
             height: 80px;
-            width: 140px;
+            width: 145px;
             background-color: #ff6666;
             margin: 5px;
             display: flex;
@@ -162,7 +167,7 @@
 		
 		.operatorExpression:hover {
 			height:85px;
-			width:145px;
+			width:150px;
 			background-color: #e60000;
 		}
 		.paranthesis {
@@ -237,6 +242,23 @@
 		}
 		.blockTitle{
 			font-size:20px;
+			
+		}
+		.logButton{
+			border:0;
+			background-color:white;
+			color: black;
+			font-size:20px;
+			
+		}
+		.logButton:hover{
+			border-width:1px;
+			border-radius:5px;
+			border-color:black;
+			border-style:solid;
+			background-color: rgb(160, 160, 224);
+			color:white;
+			
 			
 		}
 
