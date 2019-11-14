@@ -15,7 +15,13 @@
 	<div class="w3-container">
 		<h1>Math Board</h1>
 		<div class="w3-display-topright w3-padding" id = "loginContainer">
-			
+			<div class="dropdown" id="teacher" style="display: none;">
+				<button onclick="myFunction()" class="dropbtn">Create Quiz</button>
+				<div id="myDropdown" class="dropdown-content">
+					<div onclick="gradeSelected('Grade 1')">Grade 1</div>
+					<div onclick="gradeSelected('Grade 4')">Grade 4</div>
+				</div>
+			</div>
 		</div>
 	</div>
     <div class="numberContainer">

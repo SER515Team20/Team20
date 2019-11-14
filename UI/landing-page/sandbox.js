@@ -133,7 +133,7 @@ function init() {
 			logout.name = "Logout";
 			logout.id = "Logout";
 			logout.setAttribute("onclick","logout();");
-			login.setAttribute("class", "logButton");
+			logout.setAttribute("class", "logButton");
 			user.appendChild(logout);
 			
 	}
@@ -152,13 +152,38 @@ function init() {
 		var highLevel = document.getElementById("highLevel");
 		highLevel.style.display = "none";
 	}
+	if(sessionStorage.getItem("role")==="teacher") {
+		document.getElementById("teacher").style.display = "inline";
+	}
 }
 
-function showHide(){
-	if(document.getElementById("grade").value === 'primary'){
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+function gradeSelected(grade) {
+	if (grade === "Grade 1") {
+		sessionStorage.setItem("gradeForQuiz", "primary");
+	} else {
+		sessionStorage.setItem("gradeForQuiz", "middle");
 	}
-		
-	
+	window.location.href="../teacher/quiz.html";
 }
 	
 	

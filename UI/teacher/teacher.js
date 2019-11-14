@@ -1,6 +1,6 @@
 var jsonData;
 function initJSON() {
-	jsonData = {"grade" : sessionStorage.getItem("grade"), quizzes: []};
+	jsonData = {"grade" : sessionStorage.getItem("gradeForQuiz"), quizzes: []};
 }
 function saveQuestions() {
 	var i=1;
@@ -10,10 +10,10 @@ function saveQuestions() {
 	initJSON();
 	while (i<=10) {
 		question = document.getElementById("question"+i).value;
-		answer = document.getElementById("answer"+i).value;
-		if (question!==null && answer!==null
-			&& question!=="" && answer!=="") {
-			flag = evaluateExpression(question, answer);
+		//answer = document.getElementById("answer"+i).value;
+		if (question!==null //&& answer!==null
+			&& question!=="" /* && answer!=="" */) {
+			flag = evaluateExpression(question);
 			if (!flag) {
 				alert("Invalid answer given for "+question);
 				return false;
@@ -30,14 +30,9 @@ function storeVariables(question, answer) {
 	};
 	jsonData.quizzes.push(parameter);
 }
-function evaluateExpression(question, answer) {
-	if (answer === eval(question).toString(10)) {
-		storeVariables(question, answer);
-		return true;
-	} 
-	else {
-		return false;
-	}
+function evaluateExpression(question) {
+	answer = eval(question).toString(10)
+	storeVariables(question, answer);
 }
 function saveExpressionAPICall(data) {
 		
