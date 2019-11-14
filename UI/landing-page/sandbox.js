@@ -63,9 +63,9 @@ function calculateResult() {
             else if (items[i].nodeName != "#text") {
                 span = items[i].childNodes;
 				var item = span[1].innerHTML;
-				/* if (item === "x") {
+				if (item === "x") {
 					item = "*";
-				} */
+				}
 				rs += (item);
             }
         }
