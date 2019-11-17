@@ -133,7 +133,7 @@ function init() {
 			logout.name = "Logout";
 			logout.id = "Logout";
 			logout.setAttribute("onclick","logout();");
-			login.setAttribute("class", "logButton");
+			logout.setAttribute("class", "logButton");
 			user.appendChild(logout);
 			
 	}
@@ -152,6 +152,9 @@ function init() {
 		var highLevel = document.getElementById("highLevel");
 		highLevel.style.display = "none";
 	}
+	if (sessionStorage.getItem("role")==="student") {
+		document.getElementById("takeQuiz").style.display = "inline";
+	}
 }
 
 function showHide(){
@@ -159,6 +162,9 @@ function showHide(){
 	}
 		
 	
+}
+function takeQuiz() {
+	window.location.href = "quiz.html";
 }
 	
 	
