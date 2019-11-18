@@ -1,7 +1,9 @@
 package com.asu.ser515.team20.mathboard.service;
 
-import com.asu.ser515.team20.mathboard.model.Quiz;
+import com.asu.ser515.team20.mathboard.dao.ExcelReader;
+import com.asu.ser515.team20.mathboard.dao.ExcelWriter;
 import com.asu.ser515.team20.mathboard.model.QuizWrapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,13 +12,17 @@ import java.util.List;
 @Service
 public class TeacherPortalService {
 
-    private List<QuizWrapper> quizzes = new ArrayList<>();
+    @Autowired
+    private ExcelWriter excelWriter;
 
-    public boolean addQuizzes(QuizWrapper quiz) {
-        return this.quizzes.add(quiz);
+    @Autowired
+    private ExcelReader excelReader;
+
+    public boolean addQuizzes(QuizWrapper quizWrapper) {
+        return excelWriter.addQuizzes(quizWrapper);
     }
 
     public QuizWrapper getQuizBasedOnGrade(String grade){
-        return quizzes.stream().filter(quizWrapper -> quizWrapper.getGrade().equalsIgnoreCase(grade)).findFirst().orElse(null);
+        return excelReader.getQuizzes(grade);
     }
 }
