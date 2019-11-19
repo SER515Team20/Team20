@@ -1,12 +1,34 @@
 var index = 0;
 window.onload = function() {
     //call API to get quiz question
-
-    //dummy question now
     var question = "3+2-4+7*4";
     var answer = "29";
+    var quizList = getQuestionsAPI();
+    quizList.forEach(function(element) {
+        question = element.question;
+        answer = element.answer;
+    });
+    
     this.document.getElementById("answer").innerHTML=answer;
-    this.loadAllBlocks(question, answer);
+    this.loadAllBlocks(question);
+}
+function getQuestionsAPI() {
+    var url = "http://127.0.0.1:8080/GetQuiz/" + sessionStorage.getItem("grade");
+    var xhttp = new XMLHttpRequest();
+    var response = "";
+	xhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+			 if (this.responseText === "") {
+				 alert("Error Occurred.. Try again!");
+				 return false;
+			 }
+            response = JSON.parse(this.responseText);
+            
+         }
+    };
+	xhttp.open("GET", url, false);
+    xhttp.send();
+    return response.quizzes;
 }
 function loadBlock(elm) {
     var parent = document.getElementById("blockContainer");
@@ -24,7 +46,7 @@ function loadSpan(elm) {
     spanTag.innerHTML = elm;
     return spanTag;
 }
-function loadAllBlocks(question, answer) {
+function loadAllBlocks(question) {
     if (question!=="" && question!==null) {
         question = shuffle(question);
         for (var i = 0; i < question.length; i++) {
