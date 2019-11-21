@@ -160,6 +160,40 @@ function init() {
 		var highLevel = document.getElementById("highLevel");
 		highLevel.style.display = "none";
 	}
+
+	if(sessionStorage.getItem("role")==="teacher") {
+		document.getElementById("teacher").style.display = "inline";
+	}
+}
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+function gradeSelected(grade) {
+	if (grade === "Grade 1") {
+		sessionStorage.setItem("gradeForQuiz", "primary");
+	} else {
+		sessionStorage.setItem("gradeForQuiz", "middle");
+	}
+	window.location.href="../teacher/quiz.html";
+
 	if (sessionStorage.getItem("role")==="student") {
 		document.getElementById("takeQuiz").style.display = "inline";
 	}
@@ -168,6 +202,7 @@ function init() {
 function createGradeList() {
 	var dropDownBtn = document.createElement("BUTTON");
 	
+
 }
 function takeQuiz() {
 	window.location.href = "quiz.html";
