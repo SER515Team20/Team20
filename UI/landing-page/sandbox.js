@@ -160,14 +160,17 @@ function init() {
 		var highLevel = document.getElementById("highLevel");
 		highLevel.style.display = "none";
 	}
+	if (sessionStorage.getItem("role")==="student") {
+		document.getElementById("takeQuiz").style.display = "inline";
+	}
 }
 
 function createGradeList() {
 	var dropDownBtn = document.createElement("BUTTON");
 	
 }
-function createTakeQuiz() {
-	
+function takeQuiz() {
+	window.location.href = "quiz.html";
 }
 
 	
