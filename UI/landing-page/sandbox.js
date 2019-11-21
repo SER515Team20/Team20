@@ -145,7 +145,7 @@ function init() {
 	if (sessionStorage.getItem("role")==="teacher") {
 		createGradeList();
 	} else if (sessionStorage.getItem("role")==="student") {
-		createTakeQuiz();
+		document.getElementById("takeQuiz").style.display = "inline";
 	}
 	if (sessionStorage.getItem("grade")==="primary"){
 		var middleLevel = document.getElementById("middleLevel");

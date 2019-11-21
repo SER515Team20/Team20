@@ -35,9 +35,9 @@ function loginAPICall(userid, password) {
 					return false;
 				}
 				if (response.role === "admin") {
-					window.location.href="admin-page";
+					window.location.href="../admin-page";
 				} else {
-					window.location.href="landing-page";
+					window.location.href="";
 				}
 			}
          }
@@ -48,6 +48,6 @@ function loginAPICall(userid, password) {
 function logout() {
 	if (confirm("Are you sure to logout?")) {
 		sessionStorage.clear();
-		document.location.href="/UI/";
+		document.location.href="/UI/landing-page";
 	}
 }

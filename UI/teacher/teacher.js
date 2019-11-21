@@ -31,8 +31,14 @@ function storeVariables(question, answer) {
 	jsonData.quizzes.push(parameter);
 }
 function evaluateExpression(question) {
-	answer = eval(question).toString(10)
+	try {
+		answer = eval(question).toString(10);
 	storeVariables(question, answer);
+	}
+	catch(err) {
+    return false;
+	}
+	return true;
 }
 function saveExpressionAPICall(data) {
 		
@@ -46,3 +52,7 @@ function saveExpressionAPICall(data) {
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send(JSON.stringify(data));
 }
+
+function cancelQuiz(){
+	window.location.href = "../landing-page";
+}	
