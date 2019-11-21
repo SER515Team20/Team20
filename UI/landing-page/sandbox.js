@@ -62,7 +62,11 @@ function calculateResult() {
             }
             else if (items[i].nodeName != "#text") {
                 span = items[i].childNodes;
-                rs += (span[1].innerHTML);
+				var item = span[1].innerHTML;
+				if (item === "x") {
+					item = "*";
+				}
+				rs += (item);
             }
         }
         console.log(rs);
@@ -138,7 +142,11 @@ function init() {
 			
 	}
 	
-	
+	if (sessionStorage.getItem("role")==="teacher") {
+		createGradeList();
+	} else if (sessionStorage.getItem("role")==="student") {
+		createTakeQuiz();
+	}
 	if (sessionStorage.getItem("grade")==="primary"){
 		var middleLevel = document.getElementById("middleLevel");
 		var highLevel = document.getElementById("highLevel");
@@ -152,6 +160,7 @@ function init() {
 		var highLevel = document.getElementById("highLevel");
 		highLevel.style.display = "none";
 	}
+
 	if(sessionStorage.getItem("role")==="teacher") {
 		document.getElementById("teacher").style.display = "inline";
 	}
@@ -184,6 +193,20 @@ function gradeSelected(grade) {
 		sessionStorage.setItem("gradeForQuiz", "middle");
 	}
 	window.location.href="../teacher/quiz.html";
+
+	if (sessionStorage.getItem("role")==="student") {
+		document.getElementById("takeQuiz").style.display = "inline";
+	}
 }
+
+function createGradeList() {
+	var dropDownBtn = document.createElement("BUTTON");
+	
+
+}
+function takeQuiz() {
+	window.location.href = "quiz.html";
+}
+
 	
 	

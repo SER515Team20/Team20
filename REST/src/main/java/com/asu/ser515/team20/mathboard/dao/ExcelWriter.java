@@ -1,6 +1,8 @@
 package com.asu.ser515.team20.mathboard.dao;
 
 
+import com.asu.ser515.team20.mathboard.model.Quiz;
+import com.asu.ser515.team20.mathboard.model.QuizWrapper;
 import com.asu.ser515.team20.mathboard.model.User;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
@@ -85,17 +87,11 @@ public class ExcelWriter {
 
             Workbook workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
             Sheet sheet = workbook.getSheet("Users");
-
-            boolean isUserPresent = false;
             DataFormatter dataFormatter = new DataFormatter();
             for (Row row : sheet) {
                 Cell cellUser = row.getCell(0);
                 if (cellUser.getStringCellValue().equals(user)) {
-
-                    isUserPresent = true;
                     return row.getRowNum();
-
-
                 }
             }
             workbook.close();
@@ -104,6 +100,47 @@ public class ExcelWriter {
         }
         return 0;
 
+    }
+
+    public boolean addQuizzes(QuizWrapper quizWrapper) {
+        List<String> details;
+        String grade = quizWrapper.getGrade();
+        for (Quiz quiz : quizWrapper.getQuizzes()) {
+            try {
+                details = new ArrayList<>();
+                details.add(grade);
+                details.add(quiz.getQuestion());
+                details.add(quiz.getAnswer());
+
+                String SAMPLE_XLSX_FILE_PATH = "sample-xlsx-file.xlsx";
+                FileInputStream inputStream = new FileInputStream(SAMPLE_XLSX_FILE_PATH);
+                int numberOfcolumns = details.size();
+                // Obtain a workbook from the excel file
+                Workbook workbook = WorkbookFactory.create(inputStream);
+                Sheet sheet = workbook.getSheet("Quizzes");
+                if (sheet != null) {
+                    int rowCount = sheet.getLastRowNum();
+                    Row row = sheet.createRow(rowCount + 1);
+                    for (int i = 0; i < numberOfcolumns; i++) {
+                        Cell cell = row.createCell(i);
+                        cell.setCellValue(details.get(i));
+                    }
+                    inputStream.close();
+                    FileOutputStream fileOut = new FileOutputStream(SAMPLE_XLSX_FILE_PATH);
+                    workbook.write(fileOut);
+                    fileOut.close();
+
+                    // Closing the workbook
+                    workbook.close();
+                }
+
+            } catch (InvalidFormatException | IOException e) {
+                e.printStackTrace();
+                return false;
+            }
+
+        }
+        return true;
     }
 }
 
