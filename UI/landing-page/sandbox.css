@@ -35,7 +35,7 @@
 			background-color: rgb(160, 160, 224);
 			color: white;
 			height: 50px;
-			width: 150px;
+			width: 250px;
 			margin-left: 10px;
 		}
 		.resultElement:hover{
@@ -51,7 +51,7 @@
 			width:250px;
 			text-align: justify;
 			margin-left: 10px;
-			 
+			resize: none;
 		}
 		.logoutContainer{
 			position: absolute;
@@ -87,8 +87,8 @@
         } */
 
         .number {
-            height: 75px;
-            width: 75px;
+            height: 70px;
+            width: 70px;
             background-color: rgb(160, 160, 224);
             margin: 5px;
             display: flex;
@@ -98,8 +98,8 @@
         }
 		
 		.number:hover {
-			height:80px;
-			width:80px;
+			height:75px;
+			width:75px;
 			background-color: rgb(200, 200, 250);
 		}
 
@@ -108,9 +108,9 @@
             font-size: 40px;
         }
 		.operator {
-            height: 80px;
-            width: 80px;
-            background-color: rgb(160, 145, 145);
+            height: 70px;
+            width: 70px;
+            background-color: rgb(176, 254, 071);
             margin: 5px;
             display: flex;
             justify-content: center;
@@ -119,9 +119,9 @@
         }
 		
 		.operator:hover {
-			height:85px;
-			width:85px;
-			background-color: rgb(100, 90, 90);
+			height:75px;
+			width:75px;
+			background-color: rgb(136, 203, 045);
 		}
 		.variable {
             height: 80px;
@@ -194,7 +194,7 @@
 		}
 		.deleteArea {
 			height:100px; 
-			width:200px; 
+			width:250px; 
 			text-align: center;
 			background-color: rgb(200, 200, 250);
 			margin-left:10px;

@@ -77,7 +77,7 @@
 
             </div>
             <div class="operator" id="asterisk" draggable="true" ondragstart="drag(event)">
-                <span class="numberText">*</span>
+                <span class="numberText">x</span>
 
             </div>
             <div class="operator" id="backslash" draggable="true" ondragstart="drag(event)">
@@ -87,28 +87,28 @@
         </div>
 		<div id ="middleLevel">
 		<button class="toggleText" onclick="toggle('paraContainer')">
-			<p class="blockTitle">Parenthesis Operations</p>
+			<p class="blockTitle">Operations</p>
 		</button>
         <div class="operatorContainer" id="paraContainer">
             <div class="operatorExpression" id="addition" draggable="true" ondragstart="drag(event)">
-				(&nbsp;<span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
+				<span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
 				<span class="numberText">+</span>
-				<span id="rightNum"><input type="text" class="sumExpression"></input></span>&nbsp;)
+				<span id="rightNum"><input type="text" class="sumExpression"></input></span>
 			</div>
 			<div class="operatorExpression" id="subtraction" draggable="true" ondragstart="drag(event)">
-				(&nbsp;<span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
+				<span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
 				<span class="numberText">-</span>
-				<span id="rightNum"><input type="text" class="sumExpression"></input></span>&nbsp;)
+				<span id="rightNum"><input type="text" class="sumExpression"></input></span>
 			</div>
 			<div class="operatorExpression" id="multiplication" draggable="true" ondragstart="drag(event)">
-				(&nbsp;<span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
+				<span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
 				<span class="numberText">*</span>
-				<span id="rightNum"><input type="text" class="sumExpression"></input></span>&nbsp;)
+				<span id="rightNum"><input type="text" class="sumExpression"></input></span>
 			</div>
 			<div class="operatorExpression" id="division" draggable="true" ondragstart="drag(event)">
-				(&nbsp;<span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
+				<span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
 				<span class="numberText">/</span>
-				<span id="rightNum"><input type="text" class="sumExpression"></input></span>&nbsp;)
+				<span id="rightNum"><input type="text" class="sumExpression"></input></span>
 			</div>
         
 			<div class="number paranthesis" id="curlybrace1" draggable="true" ondragstart="drag(event)">
@@ -122,10 +122,10 @@
 		</div>	
 		</div>
 		<div id ="highLevel">
-		<button class="toggleText" onclick="toggle('variablesContainer')">
+		<!--<button class="toggleText" onclick="toggle('variablesContainer')">
 			<p class="blockTitle">Variables</p>
 		</button>
-		<div class="operatorContainer" id="variablesContainer">
+		 <div class="operatorContainer" id="variablesContainer">
 			<div class="variable" id="A" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">a</span>
 
@@ -150,7 +150,7 @@
                 <span class="numberText">z</span>
 
             </div>
-		</div>
+		</div> -->
         </div>
 
 
@@ -180,13 +180,14 @@
         <!-- <div class="logoutContainer">
             <button name = "logout" value="logout" id="logout" onclick="logout()" class="resultElement" >Logout</button>
         </div> -->
-		<button onclick="calculateResult()" class="resultElement"> Calculate </button><br><br>
+		<button onclick="calculateResult()" class="resultElement"> Solve </button><br><br>
 		<textarea id="finalResult" readonly class="textArea"> </textarea><br><br><hr>
-		<button onclick="clearForm()" class="resultElement"> Clear </button><br><br>
+		
 		<div class = "deleteArea" ondrop="deleteSelected(event)" ondragover="allowDrop(event)">
 			<i class="fa fa-trash"></i><br>
 			Drop here to delete
 		</div><br><br>
+		<button onclick="clearForm()" class="resultElement"> Clear All </button><br><br>
 		<button class = "resultElement" onclick="deleteLast()"> Undo </button><br><br><hr>
         
 
