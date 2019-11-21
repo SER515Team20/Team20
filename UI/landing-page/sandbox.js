@@ -12,6 +12,10 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
+
+
+
+
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
@@ -93,10 +97,21 @@ function toggle(id) {
 	
 }
 
+
+
+function displayUserName(user, userName){
+			var guest = document.createElement("label");
+			var greetings = document.createTextNode("Hello, "+userName+"! "); 
+			guest.appendChild(greetings);
+			guest.id = "Guest";
+			user.appendChild(guest);
+}
+
 function init() {
 	var user = document.getElementById("loginContainer");
 	if (sessionStorage.getItem("name") === null 
 		|| sessionStorage.getItem("name") === "") {
+			displayUserName(user, "Guest");
 			var login = document.createElement("BUTTON");
 			var link = document.createTextNode("Login"); 
 			login.appendChild(link);
@@ -105,6 +120,7 @@ function init() {
 			login.setAttribute("onclick", "document.getElementById('id01').style.display='block'");
 			user.appendChild(login);
 	} else {
+		displayUserName(user, sessionStorage.getItem("name"));
 		var logout = document.createElement("BUTTON");
 		var link = document.createTextNode("Logout"); 
 			logout.appendChild(link);
