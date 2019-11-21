@@ -155,7 +155,7 @@
         }
 
         .operatorExpression {
-            height: 80px;
+            height: 70px;
             width: 145px;
             background-color: #ff6666;
             margin: 5px;
@@ -166,7 +166,7 @@
         }
 		
 		.operatorExpression:hover {
-			height:85px;
+			height:75px;
 			width:150px;
 			background-color: #e60000;
 		}
