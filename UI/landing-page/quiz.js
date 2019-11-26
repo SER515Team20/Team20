@@ -34,7 +34,11 @@ function loadBlock(elm) {
     var parent = document.getElementById("blockContainer");
     var newBlock = document.createElement("div");
     newBlock.id = elm;
-    newBlock.className = "number";
+	if (isNaN(elm)) {
+        newBlock.className = "operator";
+    } else {
+        newBlock.className = "number";
+    }
     newBlock.setAttribute("draggable","true");
     newBlock.setAttribute("ondragstart", "drag(event)");
     newBlock.appendChild(this.loadSpan(elm));
@@ -43,6 +47,9 @@ function loadBlock(elm) {
 function loadSpan(elm) {
     var spanTag = document.createElement("span");
     spanTag.className = "numberText";
+	if (elm == "*") {
+        elm = "x";
+    }
     spanTag.innerHTML = elm;
     return spanTag;
 }
@@ -129,7 +136,11 @@ function calculateResult() {
             console.log(items[i].childNodes);
             if (items[i].nodeName != "#text") {
                 span = items[i].childNodes;
-                rs += (span[0].innerHTML);
+                var item = span[0].innerHTML;
+				if (item === "x") {
+					item = "*";
+				}
+                rs += (item);
             }
         }
         console.log(rs);
