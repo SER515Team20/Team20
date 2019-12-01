@@ -100,7 +100,8 @@
 		<button class="toggleText" onclick="toggle('paraContainer')">
 			<p class="blockTitle">Operations</p>
 		</button>
-        <div class="operatorContainer" id="paraContainer">
+		<div id="paraContainer">
+        <div class="operatorContainer" >
             <div class="operatorExpression" id="addition" draggable="true" ondragstart="drag(event)">
 				<span ><input type="text"  class="sumExpression" id="leftNum"></input></span>  
 				<span class="numberText">+</span>
@@ -121,8 +122,10 @@
 				<span class="numberText">/</span>
 				<span id="rightNum"><input type="text" class="sumExpression"></input></span>
 			</div>
-        
-			<div class="number paranthesis" id="curlybrace1" draggable="true" ondragstart="drag(event)">
+			</div>
+			<div class="operatorContainer" id="paraContainer">
+			
+			<div class="number paranthesis" id="curlybrace1" draggable="true" ondragstart="drag(event)" >
                 <span class="numberText">(</span>
 
             </div>
@@ -130,6 +133,8 @@
                 <span class="numberText">)</span>
 
             </div>
+			</div>
+			</div>
 		</div>	
 		</div>
 		<div id ="highLevel">
@@ -217,7 +222,7 @@
             <table class ="LoginTable">
             <tr><td><label><b>Username: </b></label></td><td><input type = "text" class = "username" id = "username" placeholder="Enter your Username"></input></td></tr>
             <tr><td><label><b>Password: </b></label></td><td><input type ="password" class = "password" id = "password" placeholder="Enter your Password"></input></td></tr>
-            <tr><td colspan="2"><input type="submit" class = "btn" id = "loginbtn" onclick="login()" value="Login"></input></td></tr>
+            <tr><td colspan="2"><input type="submit" class = "btn" id = "loginbtn"  value="Login"></input></td></tr>
             </table>
             </form>
         </div>

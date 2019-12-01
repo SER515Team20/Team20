@@ -69,6 +69,11 @@ function calculateResult() {
 				rs += (item);
             }
         }
+		
+		if (rs.includes(")(")){
+			rs = rs.replace(")(", ")*(");
+		}
+			
         console.log(rs);
         console.log(eval(rs));
 
