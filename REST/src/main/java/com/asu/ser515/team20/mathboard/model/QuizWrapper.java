@@ -2,6 +2,9 @@ package com.asu.ser515.team20.mathboard.model;
 
 import java.util.List;
 
+/*
+ * QuizWrapper wraps all the quizzes belonging to a particular grade.
+ */
 public class QuizWrapper {
 
     private String grade;

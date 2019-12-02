@@ -12,9 +12,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Excel Reader is used to extract the Quiz information and User Details from the Database
+ * @author Nagarjun Nama Aswath
+ */
 @Repository
 public class ExcelReader {
 
+    /*
+     * @param userID
+     * @param password
+     * @return User
+     * This method accepts userId and password from the Rest Controller and return the User
+     */
     public User searchUser(String userID, String password) {
 
         String SAMPLE_XLSX_FILE_PATH = "sample-xlsx-file.xlsx";
@@ -43,6 +53,10 @@ public class ExcelReader {
         return presentUser;
     }
 
+    /*
+     * @param userID
+     * @return User
+     */
     public User searchUserForDelete(String userID) {
 
         String SAMPLE_XLSX_FILE_PATH = "sample-xlsx-file.xlsx";
@@ -68,6 +82,11 @@ public class ExcelReader {
         return presentUser;
     }
 
+    /*
+     * @param grade
+     * @return QuizzWrapper
+     * Accepts grade and returns all the quizzes of that grade.
+     */
     public QuizWrapper getQuizzes(String grade){
         QuizWrapper quizWrapper = new QuizWrapper();
         List<Quiz> quizzes = new ArrayList<>();

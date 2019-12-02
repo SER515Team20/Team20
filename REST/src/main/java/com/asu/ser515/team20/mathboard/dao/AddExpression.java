@@ -1,35 +1,26 @@
+package com.asu.ser515.team20.mathboard.dao;
+
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-/**
+/*
  * 
  * @author Kunal Sharma
  */
 
 public class AddExpression {
 
-    /**
-     *
-     * @param args
-     * @throws IOException
-     * @throws InvalidFormatException
-     */
-    public static void main(String[] args) throws IOException, InvalidFormatException {
 
-        String[] userDetails = {"Mahesh", "a+b(x-y-1+4)-2-3-4-5-6"};
-        SaveExpression(userDetails);
-    }
-
-
-    /**
+    /*
      * Method To SaveExpression in database
      * @param details
      * @return
      */
-    public static int SaveExpression(String details[])
+    public static int SaveExpression(String[] details)
     {
         try{
             
@@ -63,7 +54,7 @@ public class AddExpression {
         }
         catch(Exception ex)
         {
-           System.out.println(ex);
+           ex.printStackTrace();
         }
         return 0;
     }
