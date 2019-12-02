@@ -1,6 +1,15 @@
+<!-- 
+	@author: Parikshith Kedilaya Mallar
+	@version: 1.0
+	@modified: Chandan Kiragadalu Javaregowda
+    @version: 2.0
+    @modified: Parikshith Kedilaya Mallar
+    @version: 3.0
+ -->
 <html>
     <head>
         <title>Create User</title>
+        <!-- Session checking -->
 		<script>
 			if((sessionStorage.getItem("name") === null 
 				|| sessionStorage.getItem("name") === "")
@@ -12,7 +21,7 @@
         <script src = "createuser.js"></script>
     </head>
     <body>
-
+        <!-- Creating a user registration form -->
         <div class="Userform Register">
             <h1>Register User</h1>
             <p>Please fill in this form to create an account.</p>
