@@ -1,3 +1,15 @@
+<!--
+    @author: Chandan Kiragadalu Javaregowda 
+    @version: 1.0
+    @modified: Parikshith Kedilaya Mallar
+    @version: 2.0
+    @modified: Parikshith Kedilaya Mallar
+    @version: 3.0
+    @modified: Chandan Kiragadalu Javaregowda
+    @version: 2.0
+-->
+
+
 <html>
 
 <head>
@@ -12,6 +24,7 @@
 </head>
 
 <body>
+    <!-- Main landing page of the application -->
 	<div class="w3-container">
 		<h1>Math Board</h1>
 		<div class="w3-display-topright w3-padding" id = "loginContainer">
@@ -28,11 +41,14 @@
             <button class="logButton" onclick="takeQuiz()" id="takeQuiz" style="display:none;">Take Quiz</button>
 
 		</div>
-	</div>
+    </div>
+    <!-- Separate divs for toolkit, sandbox and result section -->
+
     <div class="numberContainer">
 		<button class="toggleText" onclick="toggle('blockContainer')">
 			<p class="blockTitle">Numbers</p>
-		</button>
+        </button>
+        <!-- Div for numbers from 0 to 9 -->
         <div class="blockContainer" id="blockContainer">
             <div class="number" id="0" draggable="true" ondragstart="drag(event)">
                 <span class="numberText">0</span>
@@ -74,7 +90,10 @@
                 <span class="numberText">9</span>
 
             </div>
-		</div>
+        </div>
+        
+        <!-- Div for operators -->
+
 		<button class="toggleText" onclick="toggle('opContainer')">
 			<p class="blockTitle">Operators</p>
 		</button>
@@ -138,35 +157,7 @@
 		</div>	
 		</div>
 		<div id ="highLevel">
-		<!--<button class="toggleText" onclick="toggle('variablesContainer')">
-			<p class="blockTitle">Variables</p>
-		</button>
-		 <div class="operatorContainer" id="variablesContainer">
-			<div class="variable" id="A" draggable="true" ondragstart="drag(event)">
-                <span class="numberText">a</span>
-
-            </div>
-            <div class="variable" id="B" draggable="true" ondragstart="drag(event)">
-                <span class="numberText">b</span>
-
-            </div>
-            <div class="variable" id="C" draggable="true" ondragstart="drag(event)">
-                <span class="numberText">c</span>
-
-            </div>
-            <div class="variable" id="D" draggable="true" ondragstart="drag(event)">
-                <span class="numberText">x</span>
-
-            </div>
-            <div class="variable" id="E" draggable="true" ondragstart="drag(event)">
-                <span class="numberText">y</span>
-
-            </div>
-            <div class="variable" id="F" draggable="true" ondragstart="drag(event)">
-                <span class="numberText">z</span>
-
-            </div>
-		</div> -->
+		
         </div>
 
 
@@ -175,6 +166,8 @@
         <div class="operatorContainer sbExpression " id="sandboxExpression"   >
         </div>
     </div>
+
+    <!-- Script to make the numbers on the sandbox sortable (rearrange if any mistake made after drag and drop) -->
 	<script>
       $("#sandboxExpression").sortable({
         over: function(e, ui) { sortableIn = 1; },
@@ -190,12 +183,10 @@
 	
 
 
-
+    <!-- Result section of the landing page where the results would be displayed -->
 
     <div class="resultContainer" id="resultContainer">
-        <!-- <div class="logoutContainer">
-            <button name = "logout" value="logout" id="logout" onclick="logout()" class="resultElement" >Logout</button>
-        </div> -->
+       
 		<button onclick="calculateResult()" class="resultElement"> Solve </button><br><br>
 		<textarea id="finalResult" readonly class="textArea"> </textarea><br><br><hr>
 		
@@ -208,7 +199,7 @@
         
 
     </div>
-
+    <!-- Login form in the landing page -->
 <div class="w3-container">
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content">

@@ -1,3 +1,13 @@
+/*
+    @author: Parikshith Kedilaya Mallar 
+    @description: Javascript for quiz page
+    @version: 1.0
+    @modified: Parikshith Kedilaya Mallar
+    @version: 2.0
+    @modified: Parikshith Kedilaya Mallar
+    @version: 3.0
+*/
+
 var index = 0;
 window.onload = function() {
     //call API to get quiz question
@@ -12,6 +22,8 @@ window.onload = function() {
     this.document.getElementById("answer").innerHTML=answer;
     this.loadAllBlocks(question);
 }
+
+// Function to get the quiz questions from backend and display on frontend
 function getQuestionsAPI() {
     var url = "http://127.0.0.1:8080/GetQuiz/" + sessionStorage.getItem("grade");
     var xhttp = new XMLHttpRequest();
@@ -30,6 +42,8 @@ function getQuestionsAPI() {
     xhttp.send();
     return response.quizzes;
 }
+
+// Load individual block
 function loadBlock(elm) {
     var parent = document.getElementById("blockContainer");
     var newBlock = document.createElement("div");
@@ -44,6 +58,8 @@ function loadBlock(elm) {
     newBlock.appendChild(this.loadSpan(elm));
     parent.appendChild(newBlock);
 }
+
+// FUnction to load span
 function loadSpan(elm) {
     var spanTag = document.createElement("span");
     spanTag.className = "numberText";
@@ -53,6 +69,8 @@ function loadSpan(elm) {
     spanTag.innerHTML = elm;
     return spanTag;
 }
+
+// Function to load all blocks
 function loadAllBlocks(question) {
     if (question!=="" && question!==null) {
         question = shuffle(question);
@@ -61,6 +79,8 @@ function loadAllBlocks(question) {
         }
     }
 }
+
+// Function to shuffle the elements from the backend to present on quiz UI
 function shuffle(str) {
     var a = str.split(""),
         n = a.length;
@@ -74,6 +94,8 @@ function shuffle(str) {
     return a.join("");
 }
 
+
+// Function to evaluate quiz answers
 function evaluateQuiz() {
     if (this.document.getElementById("answer").innerHTML === this.calculateResult().toString()) {
         alert("Congratulations! You have answered correctly!");
@@ -83,14 +105,19 @@ function evaluateQuiz() {
         return false;
     }
 }
+
+// Function to allow dragging of elements from toolkit to sandbox
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
 
+// Function to allow dropping of elements from toolkit to sandbox
 function allowDrop(ev) {
     ev.preventDefault();
 }
 
+
+// Function to create new blocks on the sandbox after an element is dropped on sandbox
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
@@ -127,6 +154,8 @@ function drop(ev) {
         orgNbr.remove();
 	}
 }
+
+// Function to calculate the result of the expression formed on the sandbox
 
 function calculateResult() {
     try {
