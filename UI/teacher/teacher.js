@@ -1,7 +1,17 @@
+/*
+    @author: Kunal Sharma
+    @description: Create Quiz
+    @version: 1.0
+    @modified: Kunal Sharma
+    @version: 2.0
+	@modified: Kunal Sharma
+*/
+
 var jsonData;
 function initJSON() {
 	jsonData = {"grade" : sessionStorage.getItem("gradeForQuiz"), quizzes: []};
 }
+// Function to save questions.
 function saveQuestions() {
 	var i=1;
 	var question;
@@ -23,6 +33,7 @@ function saveQuestions() {
 	}
 	saveExpressionAPICall(jsonData);
 }
+//function to store variables
 function storeVariables(question, answer) {
 	var parameter = {
 		'question' : question,
@@ -30,6 +41,7 @@ function storeVariables(question, answer) {
 	};
 	jsonData.quizzes.push(parameter);
 }
+//function to evaluate expression
 function evaluateExpression(question) {
 	try {
 		answer = eval(question).toString(10);
@@ -40,6 +52,7 @@ function evaluateExpression(question) {
 	}
 	return true;
 }
+// function to save expression by api call
 function saveExpressionAPICall(data) {
 		
 	var xhttp = new XMLHttpRequest();
@@ -52,7 +65,7 @@ function saveExpressionAPICall(data) {
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send(JSON.stringify(data));
 }
-
+// function to cancel quiz
 function cancelQuiz(){
 	window.location.href = "../landing-page";
 }	
