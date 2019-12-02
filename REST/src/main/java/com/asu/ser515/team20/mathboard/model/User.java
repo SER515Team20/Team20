@@ -1,5 +1,9 @@
 package com.asu.ser515.team20.mathboard.model;
 
+/*
+ * User class acts as model class for user details.
+ * @author Nagarjun Nama Aswath
+ */
 public class User {
 
     private String userid;

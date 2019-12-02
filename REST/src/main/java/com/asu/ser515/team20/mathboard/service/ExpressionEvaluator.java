@@ -4,9 +4,18 @@ import org.springframework.stereotype.Service;
 
 import java.util.Stack;
 
+/*
+ * This class was used to evaulate expression received from the front end and later was deprecated
+ * since the logic was moved to front end.
+ * @author Nagarjun Nama Aswath
+ */
 @Service
 public class ExpressionEvaluator {
 
+    /*
+     * @param expression
+     * @return int
+     */
     public int solve(String expression) {
         char[] tokens = expression.toCharArray();
         Stack<Integer> values = new Stack<>();

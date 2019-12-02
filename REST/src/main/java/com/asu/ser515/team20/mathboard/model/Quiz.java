@@ -1,5 +1,9 @@
 package com.asu.ser515.team20.mathboard.model;
 
+/*
+ * Quiz is model class to store all the information individual quiz
+ * @author Nagarjun Nama Aswath
+ */
 public class Quiz {
 
     private String question;
