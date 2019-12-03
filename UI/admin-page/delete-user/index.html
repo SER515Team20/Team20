@@ -1,8 +1,17 @@
-<!DOCTYPE html>
+<!-- 
+	@author: Kunal Sharma
+	@version: 1.0
+	@modified: Parikshith Kedilaya Mallar
+	@version: 2.0
+	@modified: Kunal SHarma
+    @version: 3.0
+ -->
+<!-- <!DOCTYPE html> -->
 <html>
 <head>
 </head>
 <link rel="stylesheet" href ="../../styles.css">
+<!-- Session checking -->
 <script>
 	if((sessionStorage.getItem("name") === null 
 				|| sessionStorage.getItem("name") === "")
@@ -10,6 +19,7 @@
 					document.location.href="/UI/";
 			}
 </script>
+<!-- Function to confirm before delete user -->
 <script>
 function deleteconfirm() {
 	var user = document.getElementById("name").value;
@@ -21,7 +31,7 @@ function deleteconfirm() {
 		deleteUserAPI(userid);
 	}
 }
-
+//Function to call REST API to delete user
 function deleteUserAPI(userid){
 	var url = "http://127.0.0.1:8080/DeleteUser/" + userid;
 	var xhttp = new XMLHttpRequest();
@@ -35,6 +45,7 @@ function deleteUserAPI(userid){
 
 
 }
+//Function to call search to delete
 function searchUser() {
 	var userid = document.getElementById("userIDText").value;
 	if (userid === '' || userid === null) {
@@ -44,7 +55,7 @@ function searchUser() {
 	}
 }
 
-
+//Function to call REST API to search user
 function searchAPICall(userid) {
 	var url = "http://127.0.0.1:8080/getUserforDelete/" + userid;
 	var xhttp = new XMLHttpRequest();
@@ -63,7 +74,7 @@ function cancelreg() {
 }
 </script>
 <body>
-
+<!-- Form to delete user -->
 <form>
   <div class="Userform Delete">
     <h1>Delete User</h1>

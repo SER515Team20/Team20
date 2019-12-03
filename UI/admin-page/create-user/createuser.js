@@ -1,5 +1,19 @@
+/*
+	@author: Parikshith Kedilaya Mallar
+	@version: 1.0
+	@modified: Chandan Kiragadalu Javaregowda
+	@version: 2.0
+	@modified: Parikshith Kedilaya Mallar
+	@version: 3.0
+	@modified: Parikshith Kedilaya Mallar
+	@version: 4.0
+	@modified: Kunal SHarma
+    @version: 5.0
+
+*/
 var role;
 var grade;
+//Function to check if user is student and enable grade selection option
 function checkForStudent(selectedVal) {
 	role = selectedVal.value;
     if (selectedVal.value === "student") {
@@ -15,6 +29,7 @@ function checkForStudent(selectedVal) {
 function setGrade(gradeVal) {
 	grade = gradeVal.value;
 }
+//Function to register a new user. This function will do some basic validations before API call.
 function register() {
 	var reqFields = ["userid","name","psw","psw-repeat","selectRole"];
 	var nonNullFields = 0;
@@ -45,6 +60,7 @@ function register() {
 		regUserAPICall(params);
 	} 
 }
+//Call REST API to register user and return the response to the user
 function regUserAPICall(params) {
 	
 	var xhttp = new XMLHttpRequest();
@@ -57,10 +73,12 @@ function regUserAPICall(params) {
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send(JSON.stringify(params));
 }
+//Using regex, validate for correct email address
 function validateEmail(email) {
     var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return re.test(String(email).toLowerCase());
 }
+//Check if password and repeat passwor fields match
 function checkPassword(pwd, repeatpwd) {
 	if (pwd !== repeatpwd) {
 		alert("Passwords do not match");

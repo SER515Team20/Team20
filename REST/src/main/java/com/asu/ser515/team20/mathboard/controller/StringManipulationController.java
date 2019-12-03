@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * This was the class used to evaluate the expression provided in the front end. Later the logic was moved to front end.
+ * @author Nagarjun Nama Aswath
+ */
 @Deprecated
 @RestController
 @Api(tags = {"Math Expression Evaluator"})
@@ -21,6 +25,10 @@ public class StringManipulationController {
     @Autowired
     private ExpressionEvaluator expressionEvaluator;
 
+    /*
+     * @param expression
+     * @return int
+     */
     @RequestMapping(value = "/expressionEvaluation/{expression}", method = RequestMethod.GET)
     @ApiOperation(value = "Provide an Expression to be evaluated",response = Integer.class)
     public int ExpressionEvaluator(@RequestParam(value = "expression") String expression) {

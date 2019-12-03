@@ -1,17 +1,35 @@
+/*
+	@author: Chandan Kiragadalu Javaregowda 
+	@description: JS for sandbox operations like drag, drop and calculate
+    @version: 1.0
+    @modified: Chandan Kiragadalu Javaregowda
+    @version: 2.0
+    @modified: Parikshith Kedilaya Mallar
+	@version: 3.0
+	@modified: Chandan Kiragadalu Javaregowda
+	@version: 4.0
+	@modified: Kunal SHarma
+    @version: 5.0
+*/
+
 var index = 0;
 window.onload = function() {
 	init();
 	
 }
 
+// Function to allow dragging of elements from toolkit to sandbox
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
 
+// Function to allow dropping of elements from toolkit to sandbox
 function allowDrop(ev) {
     ev.preventDefault();
 }
 
+
+// Function to create new blocks on the sandbox after an element is dropped on sandbox
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
@@ -48,6 +66,8 @@ function drop(ev) {
 	}
 }
 
+
+// Function to calculate the result of the expression formed on the sandbox
 function calculateResult() {
     try {
         var items = document.getElementById('sandboxExpression').childNodes;
@@ -69,6 +89,11 @@ function calculateResult() {
 				rs += (item);
             }
         }
+		
+		if (rs.includes(")(")){
+			rs = rs.replace(")(", ")*(");
+		}
+			
         console.log(rs);
         console.log(eval(rs));
 
@@ -80,21 +105,29 @@ function calculateResult() {
 
 }
 
+
+// Function to clear all the elements from the sandbox
 function clearForm() {
     document.getElementById("sandboxExpression").innerHTML = null;
     document.getElementById("finalResult").value = 0;
 
 }
+
+// Function to delete the last dropped element from the sandbox
 function deleteLast() {
 	var element = document.getElementById("sandboxItem"+(--index));
 	element.parentNode.removeChild(element);
 }
+
+// Function to delete the selected element from the sandbox
 function deleteSelected(event) {
 	event.preventDefault();
     var element = event.dataTransfer.getData("text");
 	if (element.includes("sandboxItem"))
 	document.getElementById(element).remove();
 }
+
+// Function to toggle the display property  
 function toggle(id) {
 	var toggleBtn = document.getElementById(id);
 	if (toggleBtn.style.display === "none" ) {
@@ -106,6 +139,8 @@ function toggle(id) {
 	
 }
 
+// Function to display the user name of the logged in user on landing page
+
 function displayUserName(user, userName){
 			var guest = document.createElement("label");
 			var greetings = document.createTextNode("Hello, "+userName+"! "); 
@@ -114,6 +149,7 @@ function displayUserName(user, userName){
 			user.appendChild(guest);
 }
 
+// Init function 
 
 function init() {
 	var user = document.getElementById("loginContainer");
@@ -186,6 +222,8 @@ window.onclick = function(event) {
   }
 }
 
+// Function to display landing according to the grade of the user logged in
+
 function gradeSelected(grade) {
 	if (grade === "Grade 1") {
 		sessionStorage.setItem("gradeForQuiz", "primary");
@@ -199,11 +237,15 @@ function gradeSelected(grade) {
 	}
 }
 
+// Function to create grade list
+
 function createGradeList() {
 	var dropDownBtn = document.createElement("BUTTON");
 	
 
 }
+
+// Function to take quiz
 function takeQuiz() {
 	window.location.href = "quiz.html";
 }

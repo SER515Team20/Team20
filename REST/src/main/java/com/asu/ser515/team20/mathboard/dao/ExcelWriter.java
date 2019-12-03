@@ -12,9 +12,18 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Excel writer is used to store the Quiz and User Information to the DataBase
+ * @author Nagarjun Nama Aswath
+ */
 @Repository
 public class ExcelWriter {
 
+    /*
+     * @param user
+     * @return boolean
+     * Accepts User and stores it into DB
+     */
     public boolean addUser(User user) {
         try {
 
@@ -55,6 +64,11 @@ public class ExcelWriter {
         return true;
     }
 
+    /*
+     * @param userId
+     * @return boolean
+     * Accepts userId and deletes the user from the Database
+     */
     public static boolean DeleteUser(String userId) {
         try {
 
@@ -102,6 +116,10 @@ public class ExcelWriter {
 
     }
 
+    /*
+     * @param quizWrapper
+     * @return boolean
+     */
     public boolean addQuizzes(QuizWrapper quizWrapper) {
         List<String> details;
         String grade = quizWrapper.getGrade();

@@ -11,10 +11,18 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 
+/*
+ * This Class is configuration class for the Swagger UI. Swagger UI is used for testing of the back end code.
+ * @author Nagarjun Nama Aswath
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig extends WebMvcConfigurationSupport {
 
+    /*
+     *
+     * @return Docket
+     */
     @Bean
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -24,6 +32,9 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
 
     }
 
+    /*
+     * @param registry
+     */
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("swagger-ui.html")
